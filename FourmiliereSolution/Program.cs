@@ -1,5 +1,6 @@
 ﻿using LibAbstraite;
 using LibMetier;
+using System;
 
 namespace FourmiliereSolution
 {
@@ -7,7 +8,7 @@ namespace FourmiliereSolution
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine("Commit Chris");
         }
     }
 }
