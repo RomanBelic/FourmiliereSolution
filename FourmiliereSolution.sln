@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibMetier", "LibMetier\LibM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourmilliereUI", "FourmilliereUI\FourmilliereUI.csproj", "{8B09D909-53E9-437E-A50E-75ACA848797B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFourmilliere", "ConsoleFourmilliere\ConsoleFourmilliere.csproj", "{A3734D76-51D6-466B-A1AF-0205AB758229}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourmilliereConsole", "ConsoleFourmilliere\FourmilliereConsole.csproj", "{A3734D76-51D6-466B-A1AF-0205AB758229}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
