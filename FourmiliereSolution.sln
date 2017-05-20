@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+VisualStudioVersion = 15.0.26430.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourmiliereConsole", "FourmiliereSolution\FourmiliereConsole.csproj", "{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Version Base", "Solution Version Base", "{B8F3BB06-14A9-49B4-98E4-885D264CA103}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibAbstraite", "LibAbstraite\LibAbstraite.csproj", "{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibMetier", "LibMetier\LibMetier.csproj", "{B04AFC6A-100D-41C5-A9C6-792E28FABFBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FourmilliereUI", "FourmilliereUI\FourmilliereUI.csproj", "{8B09D909-53E9-437E-A50E-75ACA848797B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleFourmilliere", "ConsoleFourmilliere\ConsoleFourmilliere.csproj", "{A3734D76-51D6-466B-A1AF-0205AB758229}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -29,13 +27,22 @@ Global
 		{B04AFC6A-100D-41C5-A9C6-792E28FABFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B04AFC6A-100D-41C5-A9C6-792E28FABFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B04AFC6A-100D-41C5-A9C6-792E28FABFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B09D909-53E9-437E-A50E-75ACA848797B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B09D909-53E9-437E-A50E-75ACA848797B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B09D909-53E9-437E-A50E-75ACA848797B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B09D909-53E9-437E-A50E-75ACA848797B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3734D76-51D6-466B-A1AF-0205AB758229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3734D76-51D6-466B-A1AF-0205AB758229}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3734D76-51D6-466B-A1AF-0205AB758229}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3734D76-51D6-466B-A1AF-0205AB758229}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D01B8F62-1BED-4C5E-AA57-A7C9BBAD9F46} = {B8F3BB06-14A9-49B4-98E4-885D264CA103}
 		{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B} = {B8F3BB06-14A9-49B4-98E4-885D264CA103}
 		{B04AFC6A-100D-41C5-A9C6-792E28FABFBD} = {B8F3BB06-14A9-49B4-98E4-885D264CA103}
+		{8B09D909-53E9-437E-A50E-75ACA848797B} = {B8F3BB06-14A9-49B4-98E4-885D264CA103}
+		{A3734D76-51D6-466B-A1AF-0205AB758229} = {B8F3BB06-14A9-49B4-98E4-885D264CA103}
 	EndGlobalSection
 EndGlobal

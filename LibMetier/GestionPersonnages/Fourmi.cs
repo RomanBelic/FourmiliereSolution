@@ -10,12 +10,11 @@ namespace LibMetier
     public class Fourmi : PersonnageAbstrait
 
     {
-
         private List<PersonnageAbstrait> listPersonnages = new List<PersonnageAbstrait>();
 
         public Fourmi(string unNom) : base(unNom)
         {
-
+        
         }
 
         public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)

@@ -64,10 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibAbstraite\LibAbstraite.csproj">
-      <Project>{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}</Project>
+      <Project>{3feaf800-0fcd-4f7b-ade8-8627342ab85b}</Project>
       <Name>LibAbstraite</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
