@@ -31,19 +31,6 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
-        public override ObjetAbstrait CreerObjet(FabriqueAbstraiteObjet fabrique, string nom)
-        {
-            if (fabrique.GetType().Name == "Nourriture")
-            {
-                return new Nourriture(nom);
-            }
-            else if (fabrique.GetType().Name == "Oeuf")
-            {
-                return new Oeuf(nom);
-            }
-            else return new Pheromone(nom);
-        }
-
         public override PersonnageAbstrait CreerPersonnage(string nom)
         {
             throw new NotImplementedException();
