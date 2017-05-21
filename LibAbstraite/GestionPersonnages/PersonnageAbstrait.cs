@@ -22,8 +22,7 @@ namespace LibAbstraite
         }
 
         public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
-        public abstract string ToString();
-
+   
         public abstract void prendreUnObjet(ObjetAbstrait unObjet);
 
         public abstract void AjoutePersonnage(PersonnageAbstrait unPersonnage);

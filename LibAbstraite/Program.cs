@@ -1,5 +1,4 @@
-﻿using FourmiUI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +11,7 @@ namespace LibAbstraite
     {
         static void Main(string[] args)
         {
-            MainWindow mv = new MainWindow();
+           
             
             
         }
