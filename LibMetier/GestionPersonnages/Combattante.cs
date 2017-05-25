@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    public class Combattante : PersonnageAbstrait
+    public class Combattante : Fourmi
     {
         public Combattante(int id, string unNom) : base(id, unNom)
         {

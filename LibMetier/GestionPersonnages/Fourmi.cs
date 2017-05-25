@@ -19,6 +19,12 @@ namespace LibMetier
             this.Comportement = new ComportementFourmi();
         }
 
+        public Fourmi(FourmiBuilder builder)
+        {
+           
+
+        }
+
         public class FourmiBuilder
         {
             private Fourmi fourmi;
