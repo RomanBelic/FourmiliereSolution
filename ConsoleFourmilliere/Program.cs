@@ -1,4 +1,6 @@
-﻿using System;
+﻿using LibAbstraite.GestionPersonnages;
+using LibMetier.GestionPersonnages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +12,7 @@ namespace ConsoleFourmilliere
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

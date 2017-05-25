@@ -50,6 +50,7 @@
     <Compile Include="GestionObjets\ObjetAbstrait.cs" />
     <Compile Include="GestionPersonnages\ComportementAbstrait.cs" />
     <Compile Include="GestionPersonnages\PersonnageAbstrait.cs" />
+    <Compile Include="GestionPersonnages\StrategieAbstraite.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GestionEnvironnement\ZoneAbstraite.cs" />
