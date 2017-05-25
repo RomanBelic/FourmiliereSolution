@@ -49,6 +49,7 @@
     <Compile Include="GestionObjets\FabriqueConcreteOeuf.cs" />
     <Compile Include="GestionObjets\FabriqueConcretePheromone.cs" />
     <Compile Include="GestionPersonnages\Combattante.cs" />
+    <Compile Include="GestionPersonnages\ContexteStrategie.cs" />
     <Compile Include="GestionPersonnages\Cueilleuse.cs" />
     <Compile Include="GestionPersonnages\Fourmi.cs" />
     <Compile Include="GestionEnvironnement\Fourmiliere.cs" />
@@ -56,6 +57,9 @@
     <Compile Include="GestionObjets\Oeuf.cs" />
     <Compile Include="GestionObjets\Pheromone.cs" />
     <Compile Include="GestionPersonnages\Reine.cs" />
+    <Compile Include="GestionPersonnages\StrategieCombattre.cs" />
+    <Compile Include="GestionPersonnages\StrategieCueillirObjets.cs" />
+    <Compile Include="GestionPersonnages\StrategiePondreDesOeufs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
