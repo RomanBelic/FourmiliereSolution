@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibAbstraite.GestionObjets
 {
-    public abstract class FabriqueAbstraiteObjet
+    public abstract class FabriqueAbstraiteObjet<T>
     {
-        public abstract ObjetAbstrait CreerObjet(string nom);
+        public abstract T CreerObjet(string nom);
     }
 }

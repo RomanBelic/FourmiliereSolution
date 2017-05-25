@@ -49,6 +49,10 @@
     <Compile Include="GestionObjets\FabriqueConcreteOeuf.cs" />
     <Compile Include="GestionObjets\FabriqueConcretePheromone.cs" />
     <Compile Include="GestionPersonnages\Combattante.cs" />
+    <Compile Include="GestionPersonnages\ComportementCombatantte.cs" />
+    <Compile Include="GestionPersonnages\ComportementCueilleuse.cs" />
+    <Compile Include="GestionPersonnages\ComportementFourmi.cs" />
+    <Compile Include="GestionPersonnages\ComportementReine.cs" />
     <Compile Include="GestionPersonnages\Cueilleuse.cs" />
     <Compile Include="GestionPersonnages\Fourmi.cs" />
     <Compile Include="GestionEnvironnement\Fourmiliere.cs" />
@@ -67,6 +71,9 @@
       <Project>{3feaf800-0fcd-4f7b-ade8-8627342ab85b}</Project>
       <Name>LibAbstraite</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GestionEtat\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

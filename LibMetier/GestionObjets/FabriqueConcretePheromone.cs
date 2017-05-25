@@ -8,9 +8,9 @@ using LibAbstraite.GestionObjets;
 
 namespace LibMetier.GestionObjets
 {
-    public class FabriqueConcretePheromone : FabriqueAbstraiteObjet
+    public class FabriqueConcretePheromone : FabriqueAbstraiteObjet<Pheromone>
     {
-        public override ObjetAbstrait CreerObjet(string nom)
+        public override Pheromone CreerObjet(string nom)
         {
             return new Pheromone(nom);
         }

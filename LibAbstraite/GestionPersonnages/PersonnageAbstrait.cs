@@ -1,33 +1,43 @@
-﻿using System;
+﻿using LibAbstraite;
+using System;
 using System.Collections.Generic;
 
 namespace LibAbstraite
 {
     public abstract class PersonnageAbstrait
     {
-        protected string unNom { get => this.unNom = unNom; set => this.unNom = value; }
-        protected int pointDeVie { get => this.pointDeVie = pointDeVie; set => this.pointDeVie = value; }
-        protected string etat { get => this.etat = etat; set => this.etat = value; }
-        protected Random Hazard;
-        
-        protected List<ObjetAbstrait> listObjets { get => this.listObjets; set => this.listObjets = value; }
-        
-        public ZoneAbstraite uneZone{get => this.uneZone; set => this.uneZone = value;}
+        protected abstract object KeyComparer {get;}
 
-        public PersonnageAbstrait(string unNom)
+        private int id;
+        public int Id { get => id; set => id = value; }
+
+        private string nom;
+        public string Nom { get => this.nom; set => this.nom = value; }
+
+        private int pointDeVie;
+        public int PointDeVie { get => this.pointDeVie; set => this.pointDeVie = value; }
+
+        private EtatAbstrait etat;
+        public EtatAbstrait Etat { get => this.etat; set => this.etat = value; }
+
+        private List<ObjetAbstrait> listObjets;
+        public List<ObjetAbstrait> ListObjets { get => this.listObjets; set => this.listObjets = value; }
+
+        private ZoneAbstraite zone;
+        public ZoneAbstraite Zone { get => this.zone; set => this.zone = value; }
+       
+        public PersonnageAbstrait()
         {
-            this.unNom = unNom;
-            this.pointDeVie = 100;
-            this.etat = "En vie";
+        }
+ 
+        public override int GetHashCode()
+        {
+            return new { KeyComparer, nom }.GetHashCode();
         }
 
-        public abstract ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList);
-   
-        public abstract void prendreUnObjet(ObjetAbstrait unObjet);
-
-        public abstract void AjoutePersonnage(PersonnageAbstrait unPersonnage);
-        public abstract void SupprimePersonnage(PersonnageAbstrait unPersonnage);
-        public abstract PersonnageAbstrait retournerPersonnage(ZoneAbstraite uneZone);
-
+        public override bool Equals(object obj)
+        {
+            return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
+        }
     }
 }

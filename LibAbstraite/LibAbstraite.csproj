@@ -45,8 +45,10 @@
     <Compile Include="GestionEnvironnement\AccesAbstrait.cs" />
     <Compile Include="GestionEnvironnement\EnvironnementAbstrait.cs" />
     <Compile Include="Fabriques\FabriqueAbstraite.cs" />
+    <Compile Include="GestionEtat\EtatAbstrait.cs" />
     <Compile Include="GestionObjets\FabriqueAbstraiteObjet.cs" />
     <Compile Include="GestionObjets\ObjetAbstrait.cs" />
+    <Compile Include="GestionPersonnages\ComportementAbstrait.cs" />
     <Compile Include="GestionPersonnages\PersonnageAbstrait.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

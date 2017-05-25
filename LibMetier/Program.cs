@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibAbstraite;
+using static LibMetier.Fourmi;
 
 namespace LibMetier
 {
@@ -12,8 +13,7 @@ namespace LibMetier
         static void Main(string[] args)
         {
             ObjetAbstrait nourriture = new Nourriture("N");
-
-            Console.WriteLine(nourriture.GetType());
+  
 
             Console.ReadKey();
             //Commit roman

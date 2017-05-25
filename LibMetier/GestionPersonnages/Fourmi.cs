@@ -8,48 +8,67 @@ using System.Threading.Tasks;
 namespace LibMetier
 {
     public class Fourmi : PersonnageAbstrait
-
     {
-        private List<PersonnageAbstrait> listPersonnages = new List<PersonnageAbstrait>();
+        protected override object KeyComparer => this.Id;
 
-        public Fourmi(string unNom) : base(unNom)
+        private ComportementFourmi comportement;
+        public ComportementFourmi Comportement { get => comportement; set => comportement = value; }
+
+        public Fourmi() : base()
         {
-        
+            this.Comportement = new ComportementFourmi();
         }
 
-        public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)
+        public class FourmiBuilder
         {
-            throw new NotImplementedException();
-        }
+            private Fourmi fourmi;
 
-        public override string ToString()
-        {
-            return "Fourmi de nom : " + unNom;
-        }
-
-        public override void prendreUnObjet(ObjetAbstrait unObjet)
-        {
-            listObjets.Add(unObjet);
-            Console.WriteLine("La Fourmi " + unNom + " a pris un " + unObjet.Nom);
-        }
-
-        public override void AjoutePersonnage(PersonnageAbstrait unPersonnage)
-        {
-            listPersonnages.Add(unPersonnage);
-        }
-
-        public override void SupprimePersonnage(PersonnageAbstrait unPersonnage)
-        {
-            listPersonnages.Remove(unPersonnage);
-        }
-
-        public override PersonnageAbstrait retournerPersonnage(ZoneAbstraite uneZone)
-        {
-            foreach(PersonnageAbstrait unePersonne in listPersonnages)
+            public FourmiBuilder()
             {
-                if (unePersonne.uneZone == uneZone) return unePersonne;
+                this.fourmi = new Fourmi();
             }
-            return null;
+
+            public FourmiBuilder BuildId(int Id)
+            {
+                this.fourmi.Id = Id;
+                return this;
+            }
+
+            public FourmiBuilder BuildPointVie(int PointVie)
+            {
+                this.fourmi.PointDeVie = PointVie;
+                return this;
+            }
+
+            public FourmiBuilder BuildComportement(ComportementFourmi comportement)
+            {
+                this.fourmi.Comportement = comportement;
+                return this;
+            }
+
+            public FourmiBuilder BuildZone(ZoneAbstraite Zone)
+            {
+                this.fourmi.Zone = Zone;
+                return this;
+            }
+
+            public FourmiBuilder BuildNom(string Nom)
+            {
+                this.fourmi.Nom = Nom;
+                return this;
+            }
+
+            public FourmiBuilder BuildObjects(List<ObjetAbstrait> lstObjets)
+            {
+                this.fourmi.ListObjets = lstObjets;
+                return this;
+            }
+
+            public Fourmi Build()
+            {
+                return new Fourmi(this);
+            }
+
         }
     }
 }

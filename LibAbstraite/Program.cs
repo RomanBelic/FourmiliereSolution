@@ -11,7 +11,7 @@ namespace LibAbstraite
     {
         static void Main(string[] args)
         {
-           
+            
             
             
         }

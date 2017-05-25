@@ -5,46 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibMetier.GestionPersonnages
+namespace LibMetier
 {
     public class Cueilleuse : PersonnageAbstrait
     {
-
-
-        public Cueilleuse(string unNom) : base(unNom)
+        public Cueilleuse(int id, string unNom) : base(id, unNom)
         {
-
-        }
-
-        public override ZoneAbstraite ChoixZoneSuivante(List<AccesAbstrait> accesList)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void prendreUnObjet(ObjetAbstrait unObjet)
-        {
-            listObjets.Add(unObjet);
-            Console.WriteLine("La Cueilleuse " + unNom + " a pris un " + unObjet.Nom);
-        }
-
-        public override string ToString()
-        {
-            return "Cueilleuse " + unNom;
-        }
-
-        public override void AjoutePersonnage(PersonnageAbstrait unPersonnage)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void SupprimePersonnage(PersonnageAbstrait unPersonnage)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override PersonnageAbstrait retournerPersonnage(ZoneAbstraite uneZone)
-        {
-            throw new NotImplementedException();
+            this.Comportement = new ComportementCueilleuse();
         }
     }
 }
