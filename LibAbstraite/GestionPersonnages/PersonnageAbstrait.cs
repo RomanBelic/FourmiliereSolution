@@ -6,7 +6,7 @@ namespace LibAbstraite
 {
     public abstract class PersonnageAbstrait
     {
-        protected abstract object KeyComparer {get;}
+        protected abstract object KeyComparer {get;}        // Comparer des objets dans une liste
 
         private int id;
         public int Id { get => id; set => id = value; }
@@ -30,7 +30,7 @@ namespace LibAbstraite
         {
         }
  
-        public override int GetHashCode()
+        public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
         {
             return new { KeyComparer, nom }.GetHashCode();
         }

@@ -15,7 +15,7 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
-        public virtual void Bouger()
+        public virtual void Avancer()
         {
             throw new NotImplementedException();
         }
@@ -30,7 +30,8 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
-        public T Cast<T>() where T : ComportementFourmi
+        //Méthode permettant de casté lorsqu'on change de comportement
+        public T Cast<T>() where T : ComportementFourmi             
         {
             return (T)this; 
         }
