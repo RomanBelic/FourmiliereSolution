@@ -8,24 +8,24 @@ namespace LibAbstraite
 {
    public interface IObservable
    {
-        void Attacher(IObserver observer);
-        void Detacher(IObserver observer);
-        void Notifier();
+        void AttacherObs(IObserver observer);
+        void DetacherObs(IObserver observer);
+        void NotifierObs();
     }
 
     public class ObservableEmpy : IObservable
     {
-        public void Attacher(IObserver observer)
+        public void AttacherObs(IObserver observer)
         {
             Console.WriteLine("Comportement non définit");
         }
 
-        public void Detacher(IObserver observer)
+        public void DetacherObs(IObserver observer)
         {
             Console.WriteLine("Comportement non définit");
         }
 
-        public void Notifier()
+        public void NotifierObs()
         {
             Console.WriteLine("Comportement non définit");
         }
