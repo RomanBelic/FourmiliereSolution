@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace LibAbstraite
 {
-    public abstract class FabriqueAbstraite<T>
+    public abstract class FabriqueAbstraite<T> 
     {
-       public abstract T Creer();
+        public abstract T Creer();
     }
 }

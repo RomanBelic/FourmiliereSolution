@@ -9,9 +9,23 @@ namespace LibMetier
 {
     class FabriqueNourriture : FabriqueAbstraite<Nourriture>
     {
+        private static readonly FabriqueNourriture instance = new FabriqueNourriture();
+        private int idGenerator;
+
+        private FabriqueNourriture()
+        {
+            this.idGenerator = 0;
+        }
+
+        public static FabriqueNourriture GetInstance()
+        {
+            return instance;
+        }
+
         public override Nourriture Creer()
         {
-            throw new NotImplementedException();
+            idGenerator++;
+            return new Nourriture(idGenerator);
         }
     }
 }

@@ -11,9 +11,6 @@ namespace LibMetier
     {
         protected override object KeyComparer => this.Id;
 
-        private ComportementFourmi comportement;
-        public ComportementFourmi Comportement { get => comportement; set => comportement = value; }
-
         public Fourmi() : base()
         {
             this.Comportement = new ComportementFourmi();
@@ -55,7 +52,7 @@ namespace LibMetier
                 return this;
             }
 
-            public FourmiBuilder BuildComportement(ComportementFourmi comportement)
+            public FourmiBuilder BuildComportement(ComportementAbstrait comportement)
             {
                 this.fourmi.Comportement = comportement;
                 return this;

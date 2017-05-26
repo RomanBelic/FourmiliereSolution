@@ -13,6 +13,11 @@
             this.nomStr = NomStr;
         }
 
+        public ObjetAbstrait()
+        {
+
+        }
+
         public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
         {
             return new { KeyComparer, nomStr }.GetHashCode();

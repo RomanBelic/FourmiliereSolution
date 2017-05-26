@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GestionEnvironnement\Terrain.cs" />
-    <Compile Include="Fabriques\FabriqueFourmi.cs" />
     <Compile Include="GestionEtat\EtatFourmi.cs" />
     <Compile Include="Fabriques\FabriqueNourriture.cs" />
     <Compile Include="Fabriques\FabriqueOeuf.cs" />

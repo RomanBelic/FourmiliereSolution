@@ -38,6 +38,9 @@ namespace LibAbstraite
         private IObservable observable;
         public IObservable Observable { get => observable; set => observable = value; }
 
+        private ComportementAbstrait comportement;
+        public ComportementAbstrait Comportement { get => comportement; set => comportement = value; }
+
         public PersonnageAbstrait()
         {
             this.lstObservers = new List<IObserver>(32);
@@ -47,6 +50,7 @@ namespace LibAbstraite
             this.etat = new EtatEmpty();
             this.zone = new ZoneEmpty();
             this.observable = new ObservableEmpy();
+           
         }
 
         public void AttacherObs(IObserver observer)

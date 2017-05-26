@@ -12,9 +12,16 @@ namespace LibMetier
     {
         static void Main(string[] args)
         {
-           
+            FabriqueOeuf fo = FabriqueOeuf.GetInstance();
+            Oeuf o = fo.Creer();
+            Oeuf o2 = fo.Creer();
             
-            
+            Fourmi f = new Combattante();
+            f.Comportement = new ComportementCueilleuse();
+            f.Comportement.Cast<ComportementFourmi>().AjouterPersonnage(null);
+
+            Console.WriteLine(o.Id + " " +  o2.Id);
+
             Console.ReadKey();
             //Commit roman
             //qs
