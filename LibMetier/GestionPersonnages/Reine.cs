@@ -11,7 +11,7 @@ namespace LibMetier.GestionPersonnages
     {
         public Reine() : base()
         {
-            this.Comportement = new ComportementReine();
+            this.Comportement = new ComportementReine(this);
         }
     }
 }

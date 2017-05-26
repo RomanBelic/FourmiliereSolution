@@ -13,7 +13,7 @@ namespace LibMetier
 
         public Fourmi() : base()
         {
-            this.Comportement = new ComportementFourmi();
+            this.Comportement = new ComportementFourmi(this);
         }
 
         public override void MettreAJour()
@@ -29,6 +29,7 @@ namespace LibMetier
             this.Nom = builder.fourmi.Nom;
             this.PointDeVie = builder.fourmi.PointDeVie;
             this.Zone = builder.fourmi.Zone;
+            
         }
 
         public class FourmiBuilder

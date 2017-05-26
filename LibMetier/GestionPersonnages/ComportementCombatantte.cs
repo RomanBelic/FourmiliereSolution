@@ -9,6 +9,10 @@ namespace LibMetier
 {
    public class ComportementCombattante : ComportementFourmi
    {
+        public ComportementCombattante(Fourmi fourmi) : base(fourmi)
+        {
+        }
+
         public override void Combattre(PersonnageAbstrait ennemi)
         {
             //base.Combattre(ennemi);

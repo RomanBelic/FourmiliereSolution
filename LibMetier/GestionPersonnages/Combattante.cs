@@ -11,7 +11,7 @@ namespace LibMetier
     {
         public Combattante() : base()
         {
-            this.Comportement = new ComportementCombattante();
+            this.Comportement = new ComportementCombattante(this);
         }
     }
 }
