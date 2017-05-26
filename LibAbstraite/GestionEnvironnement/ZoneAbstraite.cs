@@ -11,8 +11,8 @@ namespace LibAbstraite
         private List<PersonnageAbstrait> lstPersonnages;
         public List<PersonnageAbstrait> LstPersonnages { get => lstPersonnages; set => lstPersonnages = value; }
 
-        private List<ObjetAbstrait> lstObjets;
-        public List<ObjetAbstrait> LstObjets { get => lstObjets; set => lstObjets = value; }
+        private List<ObjetAbstrait> listObjets;
+        public List<ObjetAbstrait> ListObjets { get => listObjets; set => listObjets = value; }
        
         private int limitX;
         public int LimitX { get => limitX; set => limitX = value; }

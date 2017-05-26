@@ -20,6 +20,7 @@ namespace LibMetier
             f.Comportement = new ComportementCueilleuse();
             f.Comportement.Cast<ComportementFourmi>().AjouterPersonnage(null);
 
+            Console.WriteLine("Test");
             Console.WriteLine(o.Id + " " +  o2.Id);
 
             Console.ReadKey();

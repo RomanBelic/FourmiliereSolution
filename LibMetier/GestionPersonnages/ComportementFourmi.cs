@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class ComportementFourmi : ComportementAbstrait
     {
-        public virtual void PrendreObjet(ObjetAbstrait objet)
+        public virtual void PrendreObjet(ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
         }
@@ -43,5 +43,36 @@ namespace LibMetier
         {
             throw new NotImplementedException();
         }
+
+        public virtual void Combattre(PersonnageAbstrait ennemi)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Creuser(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Nourrir(Fourmi fourmi)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual Fourmi CreerFourmi()
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void DeposerPheromone(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual bool ContientObjet(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

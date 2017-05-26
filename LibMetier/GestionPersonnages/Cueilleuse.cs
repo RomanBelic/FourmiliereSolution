@@ -9,6 +9,8 @@ namespace LibMetier
 {
     public class Cueilleuse : Fourmi
     {
+        private ObjetAbstrait unObjet;
+
         public Cueilleuse() : base()
         {
             this.Comportement = new ComportementCueilleuse();

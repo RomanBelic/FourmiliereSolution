@@ -9,9 +9,10 @@ namespace LibMetier
 {
    public class ComportementCombattante : ComportementFourmi
    {
-        public virtual void Combattre(PersonnageAbstrait enemie)
+        public override void Combattre(PersonnageAbstrait ennemi)
         {
-            throw new NotImplementedException();
+            //base.Combattre(ennemi);
+            Console.WriteLine("Combattre ennemi :" + ennemi.Nom);
         }
-   }
+    }
 }

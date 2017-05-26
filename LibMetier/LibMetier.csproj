@@ -46,6 +46,7 @@
     <Compile Include="GestionEtat\EtatFourmi.cs" />
     <Compile Include="Fabriques\FabriqueNourriture.cs" />
     <Compile Include="Fabriques\FabriqueOeuf.cs" />
+    <Compile Include="GestionObjets\Pheromone.cs" />
     <Compile Include="GestionPersonnages\Combattante.cs" />
     <Compile Include="GestionPersonnages\ComportementCombatantte.cs" />
     <Compile Include="GestionPersonnages\ComportementCueilleuse.cs" />

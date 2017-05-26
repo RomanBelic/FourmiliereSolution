@@ -8,9 +8,9 @@ namespace LibMetier
 {
     public class ComportementReine : ComportementFourmi
     {
-        public virtual Fourmi CreerFourmi()
+        public override Fourmi CreerFourmi()
         {
-            throw new NotImplementedException();
+            return base.CreerFourmi();
         }
     }
 }

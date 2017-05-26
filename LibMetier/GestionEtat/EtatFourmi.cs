@@ -44,9 +44,9 @@ namespace LibMetier
         {
         }
     }
-    public class EtatOuef : EtatFourmi
+    public class EtatOeuf : EtatFourmi
     {
-        public EtatOuef() : base((int)EtatFlags.EtatOeuf, "Oeuf")
+        public EtatOeuf() : base((int)EtatFlags.EtatOeuf, "Oeuf")
         {
         }
     }

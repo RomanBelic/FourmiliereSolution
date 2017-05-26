@@ -15,5 +15,6 @@ namespace LibAbstraite
         {
             return (T)this;
         }
+
     }
 }
