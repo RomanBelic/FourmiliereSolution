@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class Cueilleuse : Fourmi
     {
-        public Cueilleuse(int id, string unNom) : base(id, unNom)
+        public Cueilleuse() : base()
         {
             this.Comportement = new ComportementCueilleuse();
         }

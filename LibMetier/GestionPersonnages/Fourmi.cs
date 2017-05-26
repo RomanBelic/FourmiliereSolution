@@ -19,15 +19,24 @@ namespace LibMetier
             this.Comportement = new ComportementFourmi();
         }
 
+        public override void MettreAJour()
+        {
+            throw new NotImplementedException();
+        }
+
         public Fourmi(FourmiBuilder builder)
         {
-           
-
+            this.Comportement = builder.fourmi.Comportement;
+            this.Etat = builder.fourmi.Etat;
+            this.Id = builder.fourmi.Id;
+            this.Nom = builder.fourmi.Nom;
+            this.PointDeVie = builder.fourmi.PointDeVie;
+            this.Zone = builder.fourmi.Zone;
         }
 
         public class FourmiBuilder
         {
-            private Fourmi fourmi;
+            public Fourmi fourmi;
 
             public FourmiBuilder()
             {
@@ -66,7 +75,18 @@ namespace LibMetier
 
             public FourmiBuilder BuildObjects(List<ObjetAbstrait> lstObjets)
             {
-                this.fourmi.ListObjets = lstObjets;
+                this.fourmi.LstObjets = lstObjets;
+                return this;
+            }
+
+            public FourmiBuilder BuildEtat(EtatAbstrait Etat)
+            {
+                this.fourmi.Etat = Etat;
+                return this;
+            }
+            public FourmiBuilder BuildObservateurs(List<IObserver> lstObservers)
+            {
+                this.fourmi.LstObservers = lstObservers;
                 return this;
             }
 

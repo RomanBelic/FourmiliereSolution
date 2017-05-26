@@ -9,7 +9,7 @@ namespace LibMetier.GestionPersonnages
 {
     public class Reine : Fourmi
     {
-        public Reine(int id, string unNom) : base(id, unNom)
+        public Reine() : base()
         {
             this.Comportement = new ComportementReine();
         }

@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibAbstraite;
-using LibAbstraite.GestionObjets;
 
 namespace LibMetier.GestionObjets
 {
-    public class FabriqueConcreteOeuf : FabriqueAbstraiteObjet<Oeuf>
+    public class FabriqueOeuf : FabriqueAbstraite<Oeuf>
     {
-        public override Oeuf CreerObjet(string nom)
+        public override Oeuf Creer()
         {
-            return new Oeuf(nom);
+            throw new NotImplementedException();
         }
     }
 }

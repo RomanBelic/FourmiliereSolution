@@ -32,4 +32,12 @@ namespace LibAbstraite
             return obj is EtatAbstrait && this.KeyComparer.Equals(((EtatAbstrait)obj).KeyComparer);
         }
     }
+    public class EtatEmpty : EtatAbstrait
+    {
+        protected override object KeyComparer => this.IdFlag;
+
+        public EtatEmpty() : base(-1, String.Empty)
+        {
+        }
+    }
 }

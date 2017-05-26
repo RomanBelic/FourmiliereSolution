@@ -12,9 +12,8 @@ namespace LibMetier
     {
         static void Main(string[] args)
         {
-            ObjetAbstrait nourriture = new Nourriture("N");
-            Combattante combattante = new Combattante();
-            combattante.Comportement.Cast<ComportementCombattante>().Combattre();
+           
+            
             
             Console.ReadKey();
             //Commit roman

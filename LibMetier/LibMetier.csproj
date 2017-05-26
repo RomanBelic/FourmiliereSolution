@@ -42,12 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionEnvironnement\BoutDeTerrain.cs" />
-    <Compile Include="GestionEnvironnement\Chemin.cs" />
-    <Compile Include="Fabriques\FabriqueFourmiliere.cs" />
-    <Compile Include="GestionObjets\FabriqueConcreteNourriture.cs" />
-    <Compile Include="GestionObjets\FabriqueConcreteOeuf.cs" />
-    <Compile Include="GestionObjets\FabriqueConcretePheromone.cs" />
+    <Compile Include="GestionEnvironnement\Terrain.cs" />
+    <Compile Include="Fabriques\FabriqueFourmi.cs" />
+    <Compile Include="GestionEtat\EtatFourmi.cs" />
+    <Compile Include="Fabriques\FabriqueNourriture.cs" />
+    <Compile Include="Fabriques\FabriqueOeuf.cs" />
     <Compile Include="GestionPersonnages\Combattante.cs" />
     <Compile Include="GestionPersonnages\ComportementCombatantte.cs" />
     <Compile Include="GestionPersonnages\ComportementCueilleuse.cs" />
@@ -55,10 +54,8 @@
     <Compile Include="GestionPersonnages\ComportementReine.cs" />
     <Compile Include="GestionPersonnages\Cueilleuse.cs" />
     <Compile Include="GestionPersonnages\Fourmi.cs" />
-    <Compile Include="GestionEnvironnement\Fourmiliere.cs" />
     <Compile Include="GestionObjets\Nourriture.cs" />
     <Compile Include="GestionObjets\Oeuf.cs" />
-    <Compile Include="GestionObjets\Pheromone.cs" />
     <Compile Include="GestionPersonnages\Reine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +69,6 @@
       <Name>LibAbstraite</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GestionEtat\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

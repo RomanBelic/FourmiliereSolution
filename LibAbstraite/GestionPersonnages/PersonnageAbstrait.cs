@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LibAbstraite
 {
-    public abstract class PersonnageAbstrait
+    public abstract class PersonnageAbstrait : IObservable, IObserver //Peut être observateur et observable
     {
         protected abstract object KeyComparer {get;}        // Comparer des objets dans une liste
 
@@ -20,14 +20,33 @@ namespace LibAbstraite
         private EtatAbstrait etat;
         public EtatAbstrait Etat { get => this.etat; set => this.etat = value; }
 
-        private List<ObjetAbstrait> listObjets;
-        public List<ObjetAbstrait> ListObjets { get => this.listObjets; set => this.listObjets = value; }
+        private List<ObjetAbstrait> lstObjets;
+        public List<ObjetAbstrait> LstObjets { get => this.lstObjets; set => this.lstObjets = value; }
 
         private ZoneAbstraite zone;
         public ZoneAbstraite Zone { get => this.zone; set => this.zone = value; }
        
+        private Coordonnee position;
+        public Coordonnee Position { get => position; set => position = value; }
+       
+        private Coordonnee destination;
+        public Coordonnee Destination { get => destination; set => destination = value; }
+
+        private List<IObserver> lstObservers;
+        public List<IObserver> LstObservers { get => lstObservers; set => lstObservers = value; }
+        
+        private IObservable observable;
+        public IObservable Observable { get => observable; set => observable = value; }
+
         public PersonnageAbstrait()
         {
+            this.lstObservers = new List<IObserver>(32);
+            this.lstObjets = new List<ObjetAbstrait>(32);
+            this.position = new Coordonnee(0, 0);
+            this.destination = new Coordonnee(0, 0);
+            this.etat = new EtatEmpty();
+            this.zone = new ZoneEmpty();
+            this.observable = new ObservableEmpy();
         }
  
         public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
@@ -39,5 +58,22 @@ namespace LibAbstraite
         {
             return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
         }
+
+        public void Attacher(IObserver observer)
+        {
+            this.lstObservers.Remove(observer);
+        }
+
+        public void Detacher(IObserver observer)
+        {
+            this.lstObservers.Add(observer);
+        }
+
+        public void Notifier()
+        {
+            lstObservers.ForEach(o => { o.MettreAJour(); });
+        }
+
+        public abstract void MettreAJour();
     }
 }

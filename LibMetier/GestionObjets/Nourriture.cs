@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class Nourriture : ObjetAbstrait
     {
-        public Nourriture(string unNom) : base(unNom)
+        public Nourriture(int Id) : base(Id, "Nourriture")
         {
         }
     }

@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class Oeuf : ObjetAbstrait
     {
-        public Oeuf(string unNom) : base(unNom)
+        public Oeuf(int Id) : base(Id, "Oeuf")
         {
         }
     }

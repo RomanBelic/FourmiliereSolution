@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class Combattante : Fourmi
     {
-        public Combattante(int id, string unNom) : base(id, unNom)
+        public Combattante() : base()
         {
             this.Comportement = new ComportementCombattante();
         }

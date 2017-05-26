@@ -1,13 +1,11 @@
 ﻿using System;
 using LibAbstraite;
-using LibAbstraite.GestionObjets;
-using LibMetier.GestionObjets;
 
 namespace LibMetier
 {
     public class FabriqueFourmi : FabriqueAbstraite<Fourmi>
     {
-        public override Fourmi CreerObjet()
+        public override Fourmi Creer()
         {
             throw new NotImplementedException();
         }

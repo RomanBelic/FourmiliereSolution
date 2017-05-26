@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleFourmilliere
+namespace LibAbstraite
 {
-    class Program
+    public interface IObserver
     {
-        static void Main(string[] args)
-        {
-
-        }
+        void MettreAJour();
     }
 }
