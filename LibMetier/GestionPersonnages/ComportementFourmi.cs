@@ -9,6 +9,7 @@ namespace LibMetier
 {
     public class ComportementFourmi : ComportementAbstrait
     {
+
         public virtual void PrendreObjet(ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
