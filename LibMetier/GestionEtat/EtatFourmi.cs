@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    public enum EtatFlags { Vivant = 0, Mort = 1, EnAttente = 2, EtatAdult = 3, EtatOeuf = 4, Default = -1}
+    public enum EtatFlags { Vivant = 0, Mort = 1, EnAttente = 2, EtatAdult = 3, EtatOeuf = 4, EtatAvance = 5, Default = -1}
 
     public class EtatFourmi : EtatAbstrait
     {
@@ -47,6 +47,13 @@ namespace LibMetier
     public class EtatOeuf : EtatFourmi
     {
         public EtatOeuf() : base((int)EtatFlags.EtatOeuf, "Oeuf")
+        {
+        }
+    }
+
+    public class EtatAvance : EtatFourmi
+    {
+        public EtatAvance() : base((int)EtatFlags.EtatAvance, "En train d'avancer")
         {
         }
     }
