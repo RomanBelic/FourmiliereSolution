@@ -13,6 +13,11 @@ namespace LibMetier
         private int incrementIdPheromone = 0;
         List<ObjetAbstrait> objetsTrouvés = new List<ObjetAbstrait>();
 
+        public ComportementCueilleuse(Fourmi fourmi) : base(fourmi)
+        {
+
+        }
+
         public override void Creuser(ZoneAbstraite uneZone)
         {
             //base.Creuser();
@@ -26,6 +31,12 @@ namespace LibMetier
 
         public override void PrendreObjet(ZoneAbstraite uneZone)
         {
+           foreach(ObjetAbstrait o in fourmi.LstObjets) {
+                //heritage
+
+
+           }
+
             //base.PrendreObjet(objet);
             foreach (ObjetAbstrait unObjet in uneZone.ListObjets)
             {

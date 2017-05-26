@@ -50,7 +50,6 @@ namespace LibAbstraite
             this.etat = new EtatEmpty();
             this.zone = new ZoneEmpty();
             this.observable = new ObservableEmpy();
-           
         }
 
         public void AttacherObs(IObserver observer)

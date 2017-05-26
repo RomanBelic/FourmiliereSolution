@@ -9,6 +9,13 @@ namespace LibMetier
 {
     public class ComportementFourmi : ComportementAbstrait
     {
+        protected Fourmi fourmi;
+
+        public ComportementFourmi(Fourmi fourmi)
+        {
+            this.fourmi = fourmi;
+        }
+
         public virtual void PrendreObjet(ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
