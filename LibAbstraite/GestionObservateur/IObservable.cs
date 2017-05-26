@@ -13,21 +13,13 @@ namespace LibAbstraite
         void NotifierObs();
     }
 
-    public class ObservableEmpy : IObservable
+    public class ObservableEmpty : PersonnageAbstrait
     {
-        public void AttacherObs(IObserver observer)
-        {
-            Console.WriteLine("Comportement non définit");
-        }
+        protected override object KeyComparer => throw new NotImplementedException();
 
-        public void DetacherObs(IObserver observer)
+        public override void MettreAJour()
         {
-            Console.WriteLine("Comportement non définit");
-        }
-
-        public void NotifierObs()
-        {
-            Console.WriteLine("Comportement non définit");
+            Console.WriteLine("Operation imbossible");
         }
     }
 }

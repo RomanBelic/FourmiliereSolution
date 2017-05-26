@@ -18,7 +18,8 @@ namespace LibMetier
 
         public override void MettreAJour()
         {
-            throw new NotImplementedException();
+            var t = Observable;
+            //throw new NotImplementedException();
         }
 
         public Fourmi(FourmiBuilder builder)
@@ -29,7 +30,6 @@ namespace LibMetier
             this.Nom = builder.fourmi.Nom;
             this.PointDeVie = builder.fourmi.PointDeVie;
             this.Zone = builder.fourmi.Zone;
-            
         }
 
         public class FourmiBuilder

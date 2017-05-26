@@ -17,8 +17,7 @@ namespace LibMetier
             Oeuf o2 = fo.Creer();
             
             Fourmi f = new Combattante();
-            f.Comportement = new ComportementCueilleuse(f);
-            f.Comportement.Cast<ComportementFourmi>().AjouterPersonnage(null);
+            f.MettreAJour();
 
             Console.WriteLine("Test");
             Console.WriteLine(o.Id + " " +  o2.Id);

@@ -22,7 +22,7 @@ namespace LibAbstraite
 
         public ZoneAbstraite(int limitX, int limitY, string nom)
         {
-            this.LimitX = limitX;
+            this.limitX  = limitX;
             this.limitY = limitY;
             this.nom = nom;
         }
