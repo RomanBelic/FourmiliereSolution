@@ -16,9 +16,26 @@ namespace LibMetier
             this.fourmi = fourmi;
         }
 
+        public virtual void PrendreObjet(ObjetAbstrait unObjet, Coordonnee positionObjet)
+        {
+            fourmi.LstObjets.Add(unObjet);
+            fourmi.Position.X = positionObjet.X;
+            fourmi.Position.Y = positionObjet.Y;
+        }
+
         public virtual void PrendreObjet(ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
+        }
+
+        public bool SeTrouverAutourDunObjet(Fourmi fourmi, ObjetAbstrait unObjet, Coordonnee positionObjet)
+        {
+            if(fourmi.Position.X == positionObjet.X-1 || fourmi.Position.X == positionObjet.X+1 
+                || fourmi.Position.Y == positionObjet.Y-1 || fourmi.Position.Y == positionObjet.Y + 1)
+            {
+                return true;
+            }
+            return false;
         }
 
         public virtual void Avancer()
@@ -26,19 +43,37 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
-        public virtual void Mourir()
+        public virtual void Avancer(Coordonnee positionCourante, Coordonnee positionDestination)
         {
             throw new NotImplementedException();
         }
 
-        public virtual void Manger()
+        public virtual void Mourir()
         {
-            throw new NotImplementedException();
+            foreach(PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
+            {
+                if(personnage.Id == this.fourmi.Id)
+                {
+                    fourmi.Zone.SupprimerPersonnage(personnage);
+                    personnage.Etat.IdFlag = (int)EtatFlags.Mort;
+
+                    Console.WriteLine("Fourmi de nom " + fourmi.Nom + " : Etat mort");
+                }
+            }
+        }
+
+        public virtual void MangerObjet(ObjetAbstrait unObjet)
+        {
+            if (fourmi.LstObjets.Contains(unObjet))
+            {
+                fourmi.LstObjets.Remove(unObjet);
+                fourmi.PointDeVie++;            
+            }
         }
 
         public override void SupprimerPersonnage()
         {
-            throw new NotImplementedException();
+            fourmi.Zone.LstPersonnages.Remove(fourmi);         
         }
 
         public override void ChoixZoneSuivante(ZoneAbstraite zone)
@@ -48,7 +83,7 @@ namespace LibMetier
 
         public override void AjouterPersonnage(ZoneAbstraite zone)
         {
-            throw new NotImplementedException();
+            zone.LstPersonnages.Add(fourmi);
         }
 
         public virtual void Combattre(PersonnageAbstrait ennemi)

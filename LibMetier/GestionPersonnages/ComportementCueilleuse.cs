@@ -19,8 +19,6 @@ namespace LibMetier
 
         public override void Creuser(ZoneAbstraite uneZone)
         {
-            //base.Creuser();
-        
             if (ContientObjet(uneZone))
             {
                 PrendreObjet(uneZone);
@@ -31,27 +29,21 @@ namespace LibMetier
         public override void PrendreObjet(ZoneAbstraite uneZone)
         {
            foreach(ObjetAbstrait o in fourmi.LstObjets) {
-                //heritage
-
-
-           }
-
-            //base.PrendreObjet(objet);
-            foreach (ObjetAbstrait unObjet in uneZone.ListObjets)
-            {
-                if(unObjet.GetType().Name != "Pheromone")
+                foreach (ObjetAbstrait unObjet in uneZone.ListObjets)
                 {
-                    objetsTrouvés.Add(unObjet);             // Ajout d'un objet dans la liste cueilleuse
-                    DeposerPheromone(uneZone);              // Notify toutes les fourmis après dépot de phéromone... ?
-                    uneZone.ListObjets.Remove(unObjet);     // Envlève un objet dans la liste d'objets de la zone
+                    if (unObjet.GetType().Name != "Pheromone")
+                    {
+                        fourmi.LstObjets.Add(unObjet);                      // Ajout d'un objet dans la liste cueilleuse
+                        DeposerPheromone(uneZone);                          // Notify toutes les fourmis après dépot de phéromone... ?
+                        uneZone.ListObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
+                    }
+
                 }
-                
             }
         }
 
         public override void DeposerPheromone(ZoneAbstraite uneZone)
         {
-            //return base.DeposerPheromone();
             Console.WriteLine("Dépôt d'un Phéromone dans la zone... "+uneZone.Nom);
 
             //uneZone.ListObjets.Add(new Pheromone(incrementIdPheromone++, "Phéromone"));
@@ -59,7 +51,6 @@ namespace LibMetier
 
         public override bool ContientObjet(ZoneAbstraite uneZone)
         {
-            //return base.ChercherObjet(uneZone);
             Console.WriteLine("Rechercher un objet...");
 
             if (uneZone.ListObjets.Count != 0)
