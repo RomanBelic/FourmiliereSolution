@@ -62,8 +62,5 @@ namespace LibMetier
         {
             Console.WriteLine("Opération non autorisée");
         }
-
-        public override 
-
     }
 }

@@ -26,13 +26,13 @@ namespace LibMetier
 
         public override void RechercherObjet(ZoneAbstraite uneZone)
         {
-            if (uneZone.ListObjets.Count > 0)
+            if (uneZone.LstObjets.Count > 0)
             {
                 for(int x = fourmi.Position.X; x <= uneZone.LimitX; x++)
                 {
                     for(int y = fourmi.Position.Y; y <= uneZone.LimitY; y++)
                     {
-                        foreach(ObjetAbstrait unObjet in uneZone.ListObjets)
+                        foreach(ObjetAbstrait unObjet in uneZone.LstObjets)
                         {
                             if (fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
                             {
@@ -40,7 +40,7 @@ namespace LibMetier
                                 {
                                     PrendreObjet(unObjet);
                                     DeposerPheromone(uneZone);
-                                    uneZone.ListObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
+                                    uneZone.LstObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
                                 }
                             }
                             else base.Avancer(new Coordonnee(x, y));
@@ -66,7 +66,7 @@ namespace LibMetier
         {
             Console.WriteLine("Rechercher un objet...");
 
-            if (uneZone.ListObjets.Count != 0)
+            if (uneZone.LstObjets.Count != 0)
             {
                 Console.WriteLine("Au moins un objet trouvé dans cette zone... "+uneZone.Nom);
                 return true;
