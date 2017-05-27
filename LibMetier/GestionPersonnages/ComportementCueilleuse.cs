@@ -14,32 +14,45 @@ namespace LibMetier
 
         public ComportementCueilleuse(Fourmi fourmi) : base(fourmi)
         {
-
         }
 
         public override void Creuser(ZoneAbstraite uneZone)
         {
-            if (ContientObjet(uneZone))
-            {
-                PrendreObjet(uneZone);
-            }
-
+            //if (ContientObjet(uneZone))
+            //{
+            //    PrendreObjet(uneZone);
+            //}
         }
 
-        public override void PrendreObjet(ZoneAbstraite uneZone)
+        public override void RechercherObjet(ZoneAbstraite uneZone)
         {
-           foreach(ObjetAbstrait o in fourmi.LstObjets) {
-                foreach (ObjetAbstrait unObjet in uneZone.ListObjets)
+            if (uneZone.ListObjets.Count > 0)
+            {
+                for(int x = fourmi.Position.X; x <= uneZone.LimitX; x++)
                 {
-                    if (unObjet.GetType().Name != "Pheromone")
+                    for(int y = fourmi.Position.Y; y <= uneZone.LimitY; y++)
                     {
-                        fourmi.LstObjets.Add(unObjet);                      // Ajout d'un objet dans la liste cueilleuse
-                        DeposerPheromone(uneZone);                          // Notify toutes les fourmis après dépot de phéromone... ?
-                        uneZone.ListObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
+                        foreach(ObjetAbstrait unObjet in uneZone.ListObjets)
+                        {
+                            if (fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
+                            {
+                                if (unObjet.GetType().Name != "Pheromone")
+                                {
+                                    PrendreObjet(unObjet);
+                                    DeposerPheromone(uneZone);
+                                    uneZone.ListObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
+                                }
+                            }
+                            else base.Avancer(new Coordonnee(x, y));
+                        }
                     }
-
                 }
             }
+        }
+
+        public override void PrendreObjet(ObjetAbstrait unObjet)
+        {
+            fourmi.LstObjets.Add(unObjet);          
         }
 
         public override void DeposerPheromone(ZoneAbstraite uneZone)

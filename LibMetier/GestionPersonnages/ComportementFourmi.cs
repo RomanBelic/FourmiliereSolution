@@ -16,11 +16,12 @@ namespace LibMetier
             this.fourmi = fourmi;
         }
 
-        public virtual void PrendreObjet(ObjetAbstrait unObjet, Coordonnee positionObjet)
+        public virtual void PrendreObjet(ObjetAbstrait unObjet)
         {
-            fourmi.LstObjets.Add(unObjet);
-            fourmi.Position.X = positionObjet.X;
-            fourmi.Position.Y = positionObjet.Y;
+            if(fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
+            {
+                fourmi.LstObjets.Add(unObjet);
+            }
         }
 
         public virtual void PrendreObjet(ZoneAbstraite uneZone)
@@ -28,24 +29,32 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
-        public bool SeTrouverAutourDunObjet(Fourmi fourmi, ObjetAbstrait unObjet, Coordonnee positionObjet)
-        {
-            if(fourmi.Position.X == positionObjet.X-1 || fourmi.Position.X == positionObjet.X+1 
-                || fourmi.Position.Y == positionObjet.Y-1 || fourmi.Position.Y == positionObjet.Y + 1)
-            {
-                return true;
-            }
-            return false;
-        }
-
         public virtual void Avancer()
         {
             throw new NotImplementedException();
         }
 
-        public virtual void Avancer(Coordonnee positionCourante, Coordonnee positionDestination)
+        public virtual void Avancer(Coordonnee positionDestination)
         {
-            throw new NotImplementedException();
+            if (PositionVide(positionDestination))
+            {
+                fourmi.Position.X = positionDestination.X;
+                fourmi.Position.Y = positionDestination.Y;
+            }
+        }
+
+        public bool PositionVide(Coordonnee unePosition)
+        {
+            bool returnValue = false;
+
+            foreach(PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
+            {
+                if(unePosition.X == personnage.Position.X && unePosition.Y == personnage.Position.Y)
+                {
+                    returnValue = false;
+                }else returnValue = true;
+            }
+            return returnValue;
         }
 
         public virtual void Mourir()
@@ -73,7 +82,7 @@ namespace LibMetier
 
         public override void SupprimerPersonnage()
         {
-            fourmi.Zone.LstPersonnages.Remove(fourmi);         
+            fourmi.Zone.LstPersonnages.Remove(fourmi);
         }
 
         public override void ChoixZoneSuivante(ZoneAbstraite zone)
@@ -111,7 +120,17 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
+        public virtual void RechercherObjet(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual bool ContientObjet(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual ObjetAbstrait ContientObjet(ObjetAbstrait unObjet, ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
         }
