@@ -13,29 +13,4 @@ namespace LibAbstraite
         void NotifierObs();
         T GetObservableObject();
     }
-
-    public class ObservableEmpty : IObservable<EtatAbstrait>
-    {
-        private EtatAbstrait etatEmpty = new EtatEmpty();
-
-        public void AttacherObs(IObserver observer)
-        {
-            Console.WriteLine("Comportement non définit");
-        }
-
-        public void DetacherObs(IObserver observer)
-        {
-            Console.WriteLine("Comportement non définit");
-        }
-
-        public EtatAbstrait GetObservableObject()
-        {
-            return etatEmpty;
-        }
-
-        public void NotifierObs()
-        {
-            Console.WriteLine("Comportement non définit");
-        }
-    }
 }

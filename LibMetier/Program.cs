@@ -13,7 +13,7 @@ namespace LibMetier
         static void Main(string[] args)
         {
             Fourmi f = new Combattante();
-            f.Observable = new Fourmi() { Etat = new EtatAdult() };
+            //f.Observable = new Fourmi() { Id = 2 };
             f.MettreAJour();
 
             Console.ReadKey();

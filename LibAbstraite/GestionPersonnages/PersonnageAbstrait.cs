@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LibAbstraite
 {
-    public abstract class PersonnageAbstrait : IObservable<EtatAbstrait>, IObserver //Peut être observateur et observable 
+    public abstract class PersonnageAbstrait : IObservable<PersonnageAbstrait>, IObserver //Peut être observateur et observable 
     {
         protected abstract object KeyComparer {get;}        // Comparer des objets dans une liste
 
@@ -35,8 +35,8 @@ namespace LibAbstraite
         private List<IObserver> lstObservers;
         public List<IObserver> LstObservers { get => lstObservers; set => lstObservers = value; }
         
-        private IObservable<EtatAbstrait> observable;
-        public IObservable<EtatAbstrait> Observable { get => observable; set => observable = value; }
+        private IObservable<PersonnageAbstrait> observable;
+        public IObservable<PersonnageAbstrait> Observable { get => observable; set => observable = value; }
 
         private ComportementAbstrait comportement;
         public ComportementAbstrait Comportement { get => comportement; set => comportement = value; }
@@ -49,7 +49,6 @@ namespace LibAbstraite
             this.destination = new Coordonnee(0, 0);
             this.etat = new EtatEmpty();
             this.zone = new ZoneEmpty();
-            this.observable = new ObservableEmpty();
         }
 
         public void AttacherObs(IObserver observer)
@@ -67,12 +66,10 @@ namespace LibAbstraite
             lstObservers.ForEach(o => { o.MettreAJour(); });
         }
 
-        public EtatAbstrait GetObservableObject()
+        public virtual void MettreAJour()
         {
-            return this.etat;
+            throw new NotImplementedException();
         }
-
-        public abstract void MettreAJour();
 
         public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
         {
@@ -82,6 +79,11 @@ namespace LibAbstraite
         public override bool Equals(object obj)
         {
             return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
+        }
+
+        public PersonnageAbstrait GetObservableObject()
+        {
+            return this;
         }
     }
 }

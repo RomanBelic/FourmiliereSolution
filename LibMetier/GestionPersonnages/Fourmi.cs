@@ -18,9 +18,10 @@ namespace LibMetier
 
         public override void MettreAJour()
         {
-            var obs = this.Observable;
-            Console.WriteLine(obs.GetObservableObject().NameStr);
-            //throw new NotImplementedException();
+            if (this.Observable != null)
+            {
+                Console.WriteLine(this.Observable.GetObservableObject().Id);
+            }
         }
 
         public Fourmi(FourmiBuilder builder)
