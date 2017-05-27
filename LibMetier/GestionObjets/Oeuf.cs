@@ -12,5 +12,7 @@ namespace LibMetier
         public Oeuf(int Id) : base(Id, "Oeuf")
         {
         }
+
+        protected override object KeyComparer => Id;
     }
 }

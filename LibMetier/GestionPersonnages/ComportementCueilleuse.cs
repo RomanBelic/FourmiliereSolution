@@ -43,7 +43,11 @@ namespace LibMetier
                                     uneZone.LstObjets.Remove(unObjet);                 // Envlève un objet dans la liste d'objets de la zone
                                 }
                             }
-                            else base.Avancer(new Coordonnee(x, y));
+                            else
+                            {
+                                fourmi.Destination = new Coordonnee(x, y);
+                                Avancer();
+                            }
                         }
                     }
                 }

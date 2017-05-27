@@ -12,5 +12,7 @@ namespace LibMetier
         public Nourriture(int Id) : base(Id, "Nourriture")
         {
         }
+
+        protected override object KeyComparer => Id;
     }
 }

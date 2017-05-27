@@ -7,10 +7,12 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    class Pheromone : ObjetAbstrait
+    public class Pheromone : ObjetAbstrait
     {
         public Pheromone(int Id) : base(Id, "Phéromone")
         {
         }
+
+        protected override object KeyComparer => Id;
     }
 }

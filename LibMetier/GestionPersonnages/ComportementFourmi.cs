@@ -46,29 +46,6 @@ namespace LibMetier
             this.fourmi.NotifierObs();
         }
 
-        public virtual void Avancer(Coordonnee positionDestination)
-        {
-            if (PositionVide(positionDestination))
-            {
-                fourmi.Position.X = positionDestination.X;
-                fourmi.Position.Y = positionDestination.Y;
-            }
-        }
-
-        public bool PositionVide(Coordonnee unePosition)
-        {
-            bool returnValue = false;
-
-            foreach(PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
-            {
-                if(unePosition.X == personnage.Position.X && unePosition.Y == personnage.Position.Y)
-                {
-                    returnValue = false;
-                }else returnValue = true;
-            }
-            return returnValue;
-        }
-
         public virtual void Mourir()
         {
             foreach(PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
