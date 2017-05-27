@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibMetier.GestionObjets
+namespace LibMetier
 {
     class Pheromone : ObjetAbstrait
     {
-        public Pheromone(int Id, string NomStr) : base(Id, "Phéromone")
+        public Pheromone(int Id) : base(Id, "Phéromone")
         {
         }
     }

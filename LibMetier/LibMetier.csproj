@@ -42,7 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GestionEnvironnement\Terrain.cs" />
+    <Compile Include="Fabriques\FabriquePheromone.cs" />
+    <Compile Include="GestionEnvironnement\ZoneFourmilliere.cs" />
     <Compile Include="GestionEtat\EtatFourmi.cs" />
     <Compile Include="Fabriques\FabriqueNourriture.cs" />
     <Compile Include="Fabriques\FabriqueOeuf.cs" />

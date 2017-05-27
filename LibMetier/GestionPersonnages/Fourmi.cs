@@ -16,11 +16,11 @@ namespace LibMetier
            // this.Comportement = new ComportementFourmi(this);
         }
 
-        public override void MettreAJour()
+        public override void MettreAJourObservable()
         {
             if (this.Observable != null)
             {
-                Console.WriteLine(this.Observable.GetObservableObject().Id);
+                Console.WriteLine(Observable.Etat.NameStr);
             }
         }
 
@@ -32,6 +32,7 @@ namespace LibMetier
             this.Nom = builder.fourmi.Nom;
             this.PointDeVie = builder.fourmi.PointDeVie;
             this.Zone = builder.fourmi.Zone;
+            this.Observable = builder.fourmi.Observable;
         }
 
         public class FourmiBuilder
@@ -84,9 +85,15 @@ namespace LibMetier
                 this.fourmi.Etat = Etat;
                 return this;
             }
-            public FourmiBuilder BuildObservateurs(List<IObserver> lstObservers)
+            public FourmiBuilder BuildObservateurs(List<LibAbstraite.IObserver> lstObservers)
             {
                 this.fourmi.LstObservers = lstObservers;
+                return this;
+            }
+
+            public FourmiBuilder BuildObservable(PersonnageAbstrait observable)
+            {
+                this.fourmi.Observable = observable;
                 return this;
             }
 

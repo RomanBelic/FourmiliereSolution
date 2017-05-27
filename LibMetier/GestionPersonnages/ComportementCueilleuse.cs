@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibAbstraite;
-using LibMetier.GestionObjets;
 
 namespace LibMetier
 {
@@ -55,7 +54,7 @@ namespace LibMetier
             //return base.DeposerPheromone();
             Console.WriteLine("Dépôt d'un Phéromone dans la zone... "+uneZone.Nom);
 
-            uneZone.ListObjets.Add(new Pheromone(incrementIdPheromone++, "Phéromone"));
+            //uneZone.ListObjets.Add(new Pheromone(incrementIdPheromone++, "Phéromone"));
         }
 
         public override bool ContientObjet(ZoneAbstraite uneZone)

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LibAbstraite
 {
-    public abstract class PersonnageAbstrait : IObservable<PersonnageAbstrait>, IObserver //Peut être observateur et observable 
+    public abstract class PersonnageAbstrait : IObservable, IObserver //Peut être observateur et observable 
     {
         protected abstract object KeyComparer {get;}        // Comparer des objets dans une liste
 
@@ -35,8 +35,8 @@ namespace LibAbstraite
         private List<IObserver> lstObservers;
         public List<IObserver> LstObservers { get => lstObservers; set => lstObservers = value; }
         
-        private IObservable<PersonnageAbstrait> observable;
-        public IObservable<PersonnageAbstrait> Observable { get => observable; set => observable = value; }
+        private IObservable observable;
+        public PersonnageAbstrait Observable { get => (PersonnageAbstrait) observable; set => observable = value; }
 
         private ComportementAbstrait comportement;
         public ComportementAbstrait Comportement { get => comportement; set => comportement = value; }
@@ -63,10 +63,10 @@ namespace LibAbstraite
 
         public void NotifierObs()
         {
-            lstObservers.ForEach(o => { o.MettreAJour(); });
+            lstObservers.ForEach(o => { o.MettreAJourObservable(); });
         }
 
-        public virtual void MettreAJour()
+        public virtual void MettreAJourObservable()
         {
             throw new NotImplementedException();
         }
@@ -81,9 +81,5 @@ namespace LibAbstraite
             return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
         }
 
-        public PersonnageAbstrait GetObservableObject()
-        {
-            return this;
-        }
     }
 }

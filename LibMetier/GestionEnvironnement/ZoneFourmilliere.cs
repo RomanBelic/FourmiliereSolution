@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    public class Terrain : ZoneAbstraite
+    public class ZoneFourmilliere : ZoneAbstraite
     {
-        public Terrain(int x, int y) : base(x, y, "Terrain fourmilliere")
+        public ZoneFourmilliere(int x, int y) : base(x, y, "Terrain fourmilliere")
         {
 
         }
 
         public override void AjouterPersonnage(PersonnageAbstrait personnage)
         {
-            throw new NotImplementedException();
+            this.LstPersonnages.Add(personnage);
         }
 
         public override void SupprimerPersonnage(PersonnageAbstrait personnage)
         {
-            throw new NotImplementedException();
+            this.LstPersonnages.Remove(personnage);
         }
     }
 }

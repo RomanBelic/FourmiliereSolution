@@ -12,7 +12,5 @@ namespace LibMetier
         public Oeuf(int Id) : base(Id, "Oeuf")
         {
         }
-
-        public Oeuf() { }
     }
 }

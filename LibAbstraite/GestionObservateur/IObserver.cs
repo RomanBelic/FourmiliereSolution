@@ -8,6 +8,6 @@ namespace LibAbstraite
 {
     public interface IObserver
     {
-        void MettreAJour();
+        void MettreAJourObservable();
     }
 }

@@ -25,6 +25,7 @@ namespace LibAbstraite
             this.limitX  = limitX;
             this.limitY = limitY;
             this.nom = nom;
+            this.lstPersonnages = new List<PersonnageAbstrait>(64);
         }
 
         public abstract void AjouterPersonnage(PersonnageAbstrait personnage);
