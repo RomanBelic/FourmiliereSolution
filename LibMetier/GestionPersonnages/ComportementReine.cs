@@ -15,12 +15,13 @@ namespace LibMetier
 
         public override Fourmi CreerFourmi()
         {
-            Fourmi nouvelleFourmi = new Fourmi();
-            nouvelleFourmi.Etat.IdFlag = (int)EtatFlags.EtatOeuf;
-            nouvelleFourmi.PointDeVie = 1;
-            nouvelleFourmi.Comportement = new ComportementVide(nouvelleFourmi);
+            /*  Fourmi nouvelleFourmi = new Fourmi();
+              nouvelleFourmi.Etat.IdFlag = (int)EtatFlags.EtatOeuf;
+              nouvelleFourmi.PointDeVie = 1;
+              nouvelleFourmi.Comportement = new ComportementVide(nouvelleFourmi);
 
-            return nouvelleFourmi;
+              return nouvelleFourmi;*/
+            return null;
         }
 
         public override void MangerObjet(ObjetAbstrait unObjet)
