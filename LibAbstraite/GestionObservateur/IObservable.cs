@@ -6,20 +6,36 @@ using System.Threading.Tasks;
 
 namespace LibAbstraite
 {
-   public interface IObservable
+   public interface IObservable<T>
    {
         void AttacherObs(IObserver observer);
         void DetacherObs(IObserver observer);
         void NotifierObs();
+        T GetObservableObject();
     }
 
-    public class ObservableEmpty : PersonnageAbstrait
+    public class ObservableEmpty : IObservable<EtatAbstrait>
     {
-        protected override object KeyComparer => throw new NotImplementedException();
+        private EtatAbstrait etatEmpty = new EtatEmpty();
 
-        public override void MettreAJour()
+        public void AttacherObs(IObserver observer)
         {
-            Console.WriteLine("Operation imbossible");
+            Console.WriteLine("Comportement non définit");
+        }
+
+        public void DetacherObs(IObserver observer)
+        {
+            Console.WriteLine("Comportement non définit");
+        }
+
+        public EtatAbstrait GetObservableObject()
+        {
+            return etatEmpty;
+        }
+
+        public void NotifierObs()
+        {
+            Console.WriteLine("Comportement non définit");
         }
     }
 }

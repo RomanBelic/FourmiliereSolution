@@ -13,12 +13,13 @@ namespace LibMetier
 
         public Fourmi() : base()
         {
-            this.Comportement = new ComportementFourmi(this);
+           // this.Comportement = new ComportementFourmi(this);
         }
 
         public override void MettreAJour()
         {
-            var t = Observable;
+            var obs = this.Observable;
+            Console.WriteLine(obs.GetObservableObject().NameStr);
             //throw new NotImplementedException();
         }
 

@@ -16,10 +16,10 @@ namespace LibAbstraite
         public int IdFlag { get => idFlag; set => idFlag = value; }
         public string NameStr { get => nameStr; set => nameStr = value; }
 
-        public EtatAbstrait(int idFlag, string nameStr)
+        public EtatAbstrait(int IdFlag, string NameStr)
         {
-            this.idFlag = idFlag;
-            this.nameStr = nameStr;
+            this.idFlag = IdFlag;
+            this.nameStr = NameStr;
         }
 
         public override int GetHashCode()

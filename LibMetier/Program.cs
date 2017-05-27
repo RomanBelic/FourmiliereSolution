@@ -12,19 +12,15 @@ namespace LibMetier
     {
         static void Main(string[] args)
         {
-            FabriqueOeuf fo = FabriqueOeuf.GetInstance();
-            Oeuf o = fo.Creer();
-            Oeuf o2 = fo.Creer();
-            
             Fourmi f = new Combattante();
+            f.Observable = new Fourmi() { Etat = new EtatAdult() };
             f.MettreAJour();
-
-            Console.WriteLine("Test");
-            Console.WriteLine(o.Id + " " +  o2.Id);
 
             Console.ReadKey();
             //Commit roman
             //qs
         }
+
     }
+
 }
