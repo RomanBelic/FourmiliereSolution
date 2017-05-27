@@ -76,7 +76,9 @@ namespace LibMetier
 
         public override void ChoixZoneSuivante(ZoneAbstraite zone)
         {
-            throw new NotImplementedException();
+            fourmi.Zone.LstPersonnages.Remove(fourmi);
+            fourmi.Zone = zone;
+            zone.LstPersonnages.Add(fourmi);
         }
 
         public override void AjouterPersonnage(ZoneAbstraite zone)
