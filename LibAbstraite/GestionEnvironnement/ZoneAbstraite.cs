@@ -29,6 +29,7 @@ namespace LibAbstraite
             this.limitY = limitY;
             this.nom = nom;
             this.lstPersonnages = new List<PersonnageAbstrait>(64);
+            this.lstObjets = new List<ObjetAbstrait>(64);
             this.uniteTaille = uniteTaille;
         }
 
