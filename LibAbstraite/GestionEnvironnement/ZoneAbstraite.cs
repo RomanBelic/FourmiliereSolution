@@ -11,8 +11,8 @@ namespace LibAbstraite
         private List<PersonnageAbstrait> lstPersonnages;
         public List<PersonnageAbstrait> LstPersonnages { get => lstPersonnages; set => lstPersonnages = value; }
 
-        private List<ObjetAbstrait> listObjets;
-        public List<ObjetAbstrait> ListObjets { get => listObjets; set => listObjets = value; }
+        private List<ObjetAbstrait> lstObjets;
+        public List<ObjetAbstrait> LstObjets { get => lstObjets; set => lstObjets = value; }
        
         private int limitX;
         public int LimitX { get => limitX; set => limitX = value; }
@@ -20,17 +20,25 @@ namespace LibAbstraite
         private int limitY;
         public int LimitY { get => limitY; set => limitY = value; }
 
-        public ZoneAbstraite(int limitX, int limitY, string nom)
+        private int uniteTaille;
+        public int UniteTaille { get => uniteTaille; set => uniteTaille = value; }
+
+        public ZoneAbstraite(int limitX, int limitY, string nom, int uniteTaille)
         {
             this.limitX  = limitX;
             this.limitY = limitY;
             this.nom = nom;
             this.lstPersonnages = new List<PersonnageAbstrait>(64);
+            this.uniteTaille = uniteTaille;
+        }
+
+        public ZoneAbstraite()
+        {
+
         }
 
         public abstract void AjouterPersonnage(PersonnageAbstrait personnage);
         public abstract void SupprimerPersonnage(PersonnageAbstrait personnage);
-
     }
 
     public class Coordonnee
@@ -46,11 +54,21 @@ namespace LibAbstraite
             this.x = x;
             this.y = y;
         }
+
+        public override int GetHashCode()
+        {
+            return new { x, y }.GetHashCode();
+        }
+
+        public override bool Equals(object obj)
+        {
+            return (obj is Coordonnee) && this.x == ((Coordonnee)obj).x && this.y == ((Coordonnee)obj).y;
+        }
     }
 
     public class ZoneEmpty : ZoneAbstraite
     {
-        public ZoneEmpty() : base(0, 0, string.Empty)
+        public ZoneEmpty() : base(0, 0, string.Empty, 0)
         {
         }
 

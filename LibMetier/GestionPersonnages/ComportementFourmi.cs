@@ -23,7 +23,19 @@ namespace LibMetier
 
         public virtual void Avancer()
         {
-            throw new NotImplementedException();
+            if (!fourmi.Position.Equals(fourmi.Destination))
+            {
+                if (fourmi.Position.X != fourmi.Destination.X)
+                    fourmi.Position.X += (fourmi.Position.X - fourmi.Destination.X) > 0 ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
+                if (fourmi.Position.Y != fourmi.Destination.Y)
+                    fourmi.Position.Y += (fourmi.Position.Y - fourmi.Destination.Y) > 0 ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
+                this.fourmi.ChangeEtat();
+            }
+            else
+            {
+                this.fourmi.Etat = new EtatAttente();
+            }
+            this.fourmi.NotifierObs();
         }
 
         public virtual void Mourir()

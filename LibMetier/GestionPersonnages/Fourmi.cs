@@ -13,31 +13,35 @@ namespace LibMetier
 
         public Fourmi() : base()
         {
-           // this.Comportement = new ComportementFourmi(this);
+             this.Comportement = new ComportementFourmi(this);
+             this.Etat = new EtatFourmi();
         }
 
-        public override void MettreAJourObservable()
+        public override void MiseAJourObservable()
         {
-            if (this.Observable != null)
+            PersonnageAbstrait observable;
+            if ((observable = this.GetObservable()) != null)
             {
-                Console.WriteLine(Observable.Etat.NameStr);
+                Console.WriteLine(observable.Etat.NameStr);
             }
         }
 
         public Fourmi(FourmiBuilder builder)
         {
-            this.Comportement = builder.fourmi.Comportement;
-            this.Etat = builder.fourmi.Etat;
-            this.Id = builder.fourmi.Id;
-            this.Nom = builder.fourmi.Nom;
-            this.PointDeVie = builder.fourmi.PointDeVie;
-            this.Zone = builder.fourmi.Zone;
-            this.Observable = builder.fourmi.Observable;
+            this.Comportement = builder.Fourmi.Comportement;
+            this.Etat = builder.Fourmi.Etat;
+            this.Id = builder.Fourmi.Id;
+            this.Nom = builder.Fourmi.Nom;
+            this.PointDeVie = builder.Fourmi.PointDeVie;
+            this.Zone = builder.Fourmi.Zone;
+            this.Observable = builder.Fourmi.Observable;
+            this.LstObservers = builder.Fourmi.LstObservers;
         }
 
         public class FourmiBuilder
         {
-            public Fourmi fourmi;
+            private Fourmi fourmi;
+            public Fourmi Fourmi { get => fourmi ;}
 
             public FourmiBuilder()
             {
@@ -85,7 +89,7 @@ namespace LibMetier
                 this.fourmi.Etat = Etat;
                 return this;
             }
-            public FourmiBuilder BuildObservateurs(List<LibAbstraite.IObserver> lstObservers)
+            public FourmiBuilder BuildObservateurs(List<LibAbstraite.IObserver<PersonnageAbstrait>> lstObservers)
             {
                 this.fourmi.LstObservers = lstObservers;
                 return this;

@@ -22,6 +22,8 @@ namespace LibAbstraite
             this.nameStr = NameStr;
         }
 
+        public abstract void ChangeEtat(PersonnageAbstrait personnage);
+
         public override int GetHashCode()
         {
             return new  { idFlag, nameStr }.GetHashCode();
@@ -32,12 +34,18 @@ namespace LibAbstraite
             return obj is EtatAbstrait && this.KeyComparer.Equals(((EtatAbstrait)obj).KeyComparer);
         }
     }
+
     public class EtatEmpty : EtatAbstrait
     {
         protected override object KeyComparer => this.IdFlag;
 
         public EtatEmpty() : base(-1, String.Empty)
         {
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            Console.WriteLine("Comportement non définit");
         }
     }
 }

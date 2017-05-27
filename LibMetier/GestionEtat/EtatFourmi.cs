@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    public enum EtatFlags { Vivant = 0, Mort = 1, EnAttente = 2, EtatAdult = 3, EtatOeuf = 4, EtatAvance = 5, Default = -1}
+    public enum EtatFlags { Vivant = 0, Mort = 1, EnAttente = 2, EtatAdult = 3, EtatOeuf = 4, EtatAvance = 5, Default = -1, EtatFourmi = 6}
 
     public class EtatFourmi : EtatAbstrait
     {
@@ -16,6 +16,15 @@ namespace LibMetier
         public EtatFourmi(int idFlag, string nameStr) : base(idFlag, nameStr)
         {
         }
+
+        public EtatFourmi() : base((int)EtatFlags.EtatFourmi, "Fourmi initialisée")
+        {
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatOeuf();
+        }
     }
 
     public class EtatEnVie : EtatFourmi
@@ -23,25 +32,48 @@ namespace LibMetier
         public EtatEnVie() : base((int)EtatFlags.Vivant, "Vivante")
         {
         }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatMort();
+        }
     }
 
     public class EtatMort : EtatFourmi
     {
         public EtatMort() : base((int)EtatFlags.Mort, "Morte")
         {
+
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            Console.WriteLine("Comportement non définit");
         }
     }
 
-    public class EnAttente : EtatFourmi
+    public class EtatAttente : EtatFourmi
     {
-        public EnAttente() : base((int)EtatFlags.EnAttente, "En Attente")
+        public EtatAttente() : base((int)EtatFlags.EnAttente, "En Attente")
         {
+            
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatAvance();
         }
     }
     public class EtatAdult : EtatFourmi
     {
         public EtatAdult() : base((int)EtatFlags.EtatAdult, "Adult")
         {
+
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatAttente();
         }
     }
     public class EtatOeuf : EtatFourmi
@@ -49,12 +81,23 @@ namespace LibMetier
         public EtatOeuf() : base((int)EtatFlags.EtatOeuf, "Oeuf")
         {
         }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatAdult();
+        }
     }
 
     public class EtatAvance : EtatFourmi
     {
         public EtatAvance() : base((int)EtatFlags.EtatAvance, "En train d'avancer")
         {
+       
+        }
+
+        public override void ChangeEtat(PersonnageAbstrait personnage)
+        {
+            personnage.Etat = new EtatAttente();
         }
     }
 }

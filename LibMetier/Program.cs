@@ -13,9 +13,10 @@ namespace LibMetier
         static void Main(string[] args)
         {
             Fourmi f = new Combattante();
-            f.Observable = new Fourmi() { Etat = new EtatAvance() };
-            f.MettreAJourObservable();
-           
+            f.AttacherObs(new Fourmi() { Observable = f});
+            f.Etat = new EtatAvance();
+            f.NotifierObs();
+
             Console.ReadKey();
             //Commit roman
             //qs

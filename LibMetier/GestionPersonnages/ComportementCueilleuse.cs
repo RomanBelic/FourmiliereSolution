@@ -37,13 +37,13 @@ namespace LibMetier
            }
 
             //base.PrendreObjet(objet);
-            foreach (ObjetAbstrait unObjet in uneZone.ListObjets)
+            foreach (ObjetAbstrait unObjet in uneZone.LstObjets)
             {
                 if(unObjet.GetType().Name != "Pheromone")
                 {
                     objetsTrouvés.Add(unObjet);             // Ajout d'un objet dans la liste cueilleuse
                     DeposerPheromone(uneZone);              // Notify toutes les fourmis après dépot de phéromone... ?
-                    uneZone.ListObjets.Remove(unObjet);     // Envlève un objet dans la liste d'objets de la zone
+                    uneZone.LstObjets.Remove(unObjet);     // Envlève un objet dans la liste d'objets de la zone
                 }
                 
             }
@@ -62,7 +62,7 @@ namespace LibMetier
             //return base.ChercherObjet(uneZone);
             Console.WriteLine("Rechercher un objet...");
 
-            if (uneZone.ListObjets.Count != 0)
+            if (uneZone.LstObjets.Count != 0)
             {
                 Console.WriteLine("Au moins un objet trouvé dans cette zone... "+uneZone.Nom);
                 return true;

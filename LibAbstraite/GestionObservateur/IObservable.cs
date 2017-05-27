@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace LibAbstraite
 {
-   public interface IObservable
+   public interface IObservable<T>
    {
-        void AttacherObs(IObserver observer);
-        void DetacherObs(IObserver observer);
+        void AttacherObs(IObserver<T> observer);
+        void DetacherObs(IObserver<T> observer);
         void NotifierObs();
     }
 }

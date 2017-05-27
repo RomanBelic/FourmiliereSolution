@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LibAbstraite
+namespace LibAbstraite.GestionSimulateur
 {
-    public interface IObserver<T>
+    class Simulateur
     {
-        void MiseAJourObservable();
-        T GetObservable();
+      
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LibAbstraite
 {
-    public abstract class PersonnageAbstrait : IObservable, IObserver //Peut être observateur et observable 
+    public abstract class PersonnageAbstrait : IObservable<PersonnageAbstrait>, IObserver<PersonnageAbstrait> //Peut être observateur et observable 
     {
         protected abstract object KeyComparer {get;}        // Comparer des objets dans une liste
 
@@ -32,18 +32,18 @@ namespace LibAbstraite
         private Coordonnee destination;
         public Coordonnee Destination { get => destination; set => destination = value; }
 
-        private List<IObserver> lstObservers;
-        public List<IObserver> LstObservers { get => lstObservers; set => lstObservers = value; }
+        private List<IObserver<PersonnageAbstrait>> lstObservers;
+        public List<IObserver<PersonnageAbstrait>> LstObservers { get => lstObservers; set => lstObservers = value; }
         
-        private IObservable observable;
-        public PersonnageAbstrait Observable { get => (PersonnageAbstrait) observable; set => observable = value; }
+        private IObservable<PersonnageAbstrait> observable;
+        public IObservable<PersonnageAbstrait> Observable { get =>  observable; set => observable = value; }
 
         private ComportementAbstrait comportement;
         public ComportementAbstrait Comportement { get => comportement; set => comportement = value; }
 
         public PersonnageAbstrait()
         {
-            this.lstObservers = new List<IObserver>(32);
+            this.lstObservers = new List<IObserver<PersonnageAbstrait>>(32);
             this.lstObjets = new List<ObjetAbstrait>(32);
             this.position = new Coordonnee(0, 0);
             this.destination = new Coordonnee(0, 0);
@@ -51,24 +51,34 @@ namespace LibAbstraite
             this.zone = new ZoneEmpty();
         }
 
-        public void AttacherObs(IObserver observer)
+        public void ChangeEtat()
+        {
+            this.etat.ChangeEtat(this);
+        }
+
+        public void AttacherObs(IObserver<PersonnageAbstrait> observer)
         {
             this.lstObservers.Add(observer);
         }
 
-        public void DetacherObs(IObserver observer)
+        public void DetacherObs(IObserver<PersonnageAbstrait> observer)
         {
             this.lstObservers.Remove(observer);
         }
 
         public void NotifierObs()
         {
-            lstObservers.ForEach(o => { o.MettreAJourObservable(); });
+            lstObservers.ForEach(o => { o.MiseAJourObservable(); });
         }
 
-        public virtual void MettreAJourObservable()
+        public virtual void MiseAJourObservable()
         {
             throw new NotImplementedException();
+        }
+
+        public PersonnageAbstrait GetObservable()
+        {
+            return (observable != null) ? (PersonnageAbstrait)observable : null;
         }
 
         public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
@@ -80,6 +90,5 @@ namespace LibAbstraite
         {
             return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
         }
-
     }
 }
