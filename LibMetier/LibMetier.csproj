@@ -53,7 +53,9 @@
     <Compile Include="GestionPersonnages\ComportementCueilleuse.cs" />
     <Compile Include="GestionPersonnages\ComportementFourmi.cs" />
     <Compile Include="GestionPersonnages\ComportementReine.cs" />
+    <Compile Include="GestionPersonnages\ComportementVide.cs" />
     <Compile Include="GestionPersonnages\Cueilleuse.cs" />
+    <Compile Include="GestionPersonnages\Etape.cs" />
     <Compile Include="GestionPersonnages\Fourmi.cs" />
     <Compile Include="GestionObjets\Nourriture.cs" />
     <Compile Include="GestionObjets\Oeuf.cs" />

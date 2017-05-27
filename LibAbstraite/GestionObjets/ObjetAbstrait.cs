@@ -7,6 +7,8 @@
         private string nomStr;
         public string NomStr { get => nomStr; set => nomStr = value; }
         protected object KeyComparer { get; }
+        private Coordonnee positionObjet;
+        public Coordonnee PositionObjet { get => positionObjet; set => positionObjet = value; }
 
         public ObjetAbstrait (int Id, string NomStr) {
             this.id = Id;
