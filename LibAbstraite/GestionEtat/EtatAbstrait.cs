@@ -33,6 +33,11 @@ namespace LibAbstraite
         {
             return obj is EtatAbstrait && this.KeyComparer.Equals(((EtatAbstrait)obj).KeyComparer);
         }
+
+        public override string ToString()
+        {
+            return String.Format("Etat : {0} {1}", idFlag, nameStr);
+        }
     }
 
     public class EtatEmpty : EtatAbstrait

@@ -27,5 +27,12 @@ namespace LibMetier
             idGenerator++;
             return new Pheromone(idGenerator);
         }
+
+        public Pheromone Creer(Coordonnee position)
+        {
+            idGenerator++;
+            Coordonnee posNoReference = new Coordonnee(position.X, position.Y);
+            return new Pheromone(idGenerator, posNoReference);
+        }
     }
 }

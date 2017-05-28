@@ -13,6 +13,11 @@ namespace LibMetier
         {
         }
 
+        public Pheromone(int Id, Coordonnee position) : this(Id)
+        {
+            this.PositionObjet = position;
+        }
+
         protected override object KeyComparer => Id;
     }
 }

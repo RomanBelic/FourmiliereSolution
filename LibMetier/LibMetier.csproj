@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fabriques\FabriqueFourmi.cs" />
     <Compile Include="Fabriques\FabriquePheromone.cs" />
+    <Compile Include="Fabriques\FabriqueZone.cs" />
     <Compile Include="GestionEnvironnement\ZoneFourmilliere.cs" />
+    <Compile Include="GestionEtat\CollectionEtat.cs" />
     <Compile Include="GestionEtat\EtatFourmi.cs" />
     <Compile Include="Fabriques\FabriqueNourriture.cs" />
     <Compile Include="Fabriques\FabriqueOeuf.cs" />
@@ -59,6 +63,7 @@
     <Compile Include="GestionObjets\Nourriture.cs" />
     <Compile Include="GestionObjets\Oeuf.cs" />
     <Compile Include="GestionPersonnages\Reine.cs" />
+    <Compile Include="GestionSimulateur\SimulateurFourmi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

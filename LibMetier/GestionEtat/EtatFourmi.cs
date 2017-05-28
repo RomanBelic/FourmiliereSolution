@@ -23,7 +23,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatOeuf();
+            personnage.Etat = CollectionEtat.EtatOeuf;
         }
     }
 
@@ -35,7 +35,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatMort();
+            personnage.Etat = CollectionEtat.EtatMort;
         }
     }
 
@@ -61,7 +61,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatAvance();
+            personnage.Etat = CollectionEtat.EtatAvance;
         }
     }
     public class EtatAdult : EtatFourmi
@@ -73,7 +73,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatAttente();
+            personnage.Etat = CollectionEtat.EtatAttente;
         }
     }
     public class EtatOeuf : EtatFourmi
@@ -84,7 +84,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatAdult();
+            personnage.Etat = CollectionEtat.EtatAdult;
         }
     }
 
@@ -97,7 +97,7 @@ namespace LibMetier
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
         {
-            personnage.Etat = new EtatAttente();
+            personnage.Etat = CollectionEtat.EtatAttente;   
         }
     }
 }

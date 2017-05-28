@@ -34,9 +34,6 @@ namespace LibAbstraite
 
         private List<IObserver<PersonnageAbstrait>> lstObservers;
         public List<IObserver<PersonnageAbstrait>> LstObservers { get => lstObservers; set => lstObservers = value; }
-        
-        private IObservable<PersonnageAbstrait> observable;
-        public IObservable<PersonnageAbstrait> Observable { get =>  observable; set => observable = value; }
 
         private ComportementAbstrait comportement;
         public ComportementAbstrait Comportement { get => comportement; set => comportement = value; }
@@ -68,17 +65,12 @@ namespace LibAbstraite
 
         public void NotifierObs()
         {
-            lstObservers.ForEach(o => { o.MiseAJourObservable(); });
+            lstObservers.ForEach(o => { o.OnMiseAJour(this); });
         }
 
-        public virtual void MiseAJourObservable()
+        public virtual void OnMiseAJour(PersonnageAbstrait observable)
         {
             throw new NotImplementedException();
-        }
-
-        public PersonnageAbstrait GetObservable()
-        {
-            return (observable != null) ? (PersonnageAbstrait)observable : null;
         }
 
         public override int GetHashCode()           // Si Equals retourne true, GetHashCode retourne true et sert à comparer les objets via ==
@@ -89,6 +81,11 @@ namespace LibAbstraite
         public override bool Equals(object obj)
         {
             return obj is PersonnageAbstrait && this.KeyComparer.Equals(((PersonnageAbstrait)obj).KeyComparer);
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Id : {0}, Nom : {1}, {2}, {3}, PV : {4}", this.Id, this.Nom, this.Etat.ToString(), this.Position.ToString(), this.PointDeVie);
         }
     }
 }

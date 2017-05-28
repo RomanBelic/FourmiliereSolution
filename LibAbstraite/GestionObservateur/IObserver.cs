@@ -8,7 +8,6 @@ namespace LibAbstraite
 {
     public interface IObserver<T>
     {
-        void MiseAJourObservable();
-        T GetObservable();
+        void OnMiseAJour(T observable);
     }
 }

@@ -9,19 +9,18 @@ namespace LibMetier
 {
     public class ComportementReine : ComportementFourmi
     {
+        private FabriqueFourmi fabrique = FabriqueFourmi.GetInstance();
+
         public ComportementReine(Fourmi fourmi) : base(fourmi)
         {
         }
 
         public override Fourmi CreerFourmi()
         {
-            /*  Fourmi nouvelleFourmi = new Fourmi();
-              nouvelleFourmi.Etat.IdFlag = (int)EtatFlags.EtatOeuf;
-              nouvelleFourmi.PointDeVie = 1;
-              nouvelleFourmi.Comportement = new ComportementVide(nouvelleFourmi);
-
-              return nouvelleFourmi;*/
-            return null;
+            Coordonnee position = new Coordonnee(fourmi.Position.X, fourmi.Position.Y);
+            Fourmi spawn = fabrique.Creer(fourmi.Zone, position);
+            spawn.Comportement = new ComportementFourmi(spawn);
+            return spawn;
         }
 
         public override void MangerObjet(ObjetAbstrait unObjet)

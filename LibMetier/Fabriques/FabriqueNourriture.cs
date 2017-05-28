@@ -7,7 +7,7 @@ using LibAbstraite;
 
 namespace LibMetier
 {
-    class FabriqueNourriture : FabriqueAbstraite<Nourriture>
+    public class FabriqueNourriture : FabriqueAbstraite<Nourriture>
     {
         private static readonly FabriqueNourriture instance = new FabriqueNourriture();
         private int idGenerator;

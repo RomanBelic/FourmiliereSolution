@@ -31,19 +31,22 @@ namespace LibMetier
 
         public virtual void Avancer()
         {
-            if (!fourmi.Position.Equals(fourmi.Destination))
+            if (fourmi.Etat.Equals(CollectionEtat.EtatAdult) || fourmi.Etat.Equals(CollectionEtat.EtatAttente))
             {
-                if (fourmi.Position.X != fourmi.Destination.X)
-                    fourmi.Position.X += (fourmi.Position.X - fourmi.Destination.X) > 0 ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
-                if (fourmi.Position.Y != fourmi.Destination.Y)
-                    fourmi.Position.Y += (fourmi.Position.Y - fourmi.Destination.Y) > 0 ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
-                this.fourmi.ChangeEtat();
+                if (!fourmi.Position.Equals(fourmi.Destination))
+                {
+                    if (fourmi.Position.X != fourmi.Destination.X)
+                        fourmi.Position.X += (fourmi.Position.X < fourmi.Destination.X) ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
+                    if (fourmi.Position.Y != fourmi.Destination.Y)
+                        fourmi.Position.Y += (fourmi.Position.Y < fourmi.Destination.Y) ? fourmi.Zone.UniteTaille : -fourmi.Zone.UniteTaille;
+                    this.fourmi.ChangeEtat();
+                }
+                else
+                {
+                    this.fourmi.Etat = CollectionEtat.EtatAttente;
+                }
+                this.fourmi.NotifierObs();
             }
-            else
-            {
-                this.fourmi.Etat = new EtatAttente();
-            }
-            this.fourmi.NotifierObs();
         }
 
         public virtual void Mourir()

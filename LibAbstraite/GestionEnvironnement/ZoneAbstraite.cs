@@ -38,6 +38,11 @@ namespace LibAbstraite
 
         }
 
+        public override string ToString()
+        {
+            return String.Format("{0}", nom);
+        }
+
         public abstract void AjouterPersonnage(PersonnageAbstrait personnage);
         public abstract void SupprimerPersonnage(PersonnageAbstrait personnage);
     }
@@ -64,6 +69,11 @@ namespace LibAbstraite
         public override bool Equals(object obj)
         {
             return (obj is Coordonnee) && this.x == ((Coordonnee)obj).x && this.y == ((Coordonnee)obj).y;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Position X : {0}, Y : {1}", x, y);
         }
     }
 

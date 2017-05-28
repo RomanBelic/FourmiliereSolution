@@ -13,29 +13,31 @@ namespace LibMetier
 
         public Fourmi() : base()
         {
-             this.Comportement = new ComportementFourmi(this);
-             this.Etat = new EtatFourmi();
+            this.Comportement = new ComportementFourmi(this);
+            this.Etat = CollectionEtat.EtatFourmi;
+            this.PointDeVie = 100;
         }
 
-        public override void MiseAJourObservable()
+        public Fourmi(int Id) : this()
         {
-            PersonnageAbstrait observable;
-            if ((observable = this.GetObservable()) != null)
-            {
-                Console.WriteLine(observable.Etat.NameStr);
-            }
+            this.Id = Id;
+        }
+
+        public override void OnMiseAJour(PersonnageAbstrait observable)
+        {
+             Console.WriteLine(String.Format("Notification par {0}",observable.ToString()));
         }
 
         public Fourmi(FourmiBuilder builder)
         {
-            this.Comportement = builder.Fourmi.Comportement;
+            this.Comportement = new ComportementFourmi(this);
             this.Etat = builder.Fourmi.Etat;
             this.Id = builder.Fourmi.Id;
             this.Nom = builder.Fourmi.Nom;
             this.PointDeVie = builder.Fourmi.PointDeVie;
             this.Zone = builder.Fourmi.Zone;
-            this.Observable = builder.Fourmi.Observable;
             this.LstObservers = builder.Fourmi.LstObservers;
+            this.Position = builder.Fourmi.Position;
         }
 
         public class FourmiBuilder
@@ -60,9 +62,9 @@ namespace LibMetier
                 return this;
             }
 
-            public FourmiBuilder BuildComportement(ComportementAbstrait comportement)
+            public FourmiBuilder BuildPosition(Coordonnee position)
             {
-                this.fourmi.Comportement = comportement;
+                this.fourmi.Position = position;
                 return this;
             }
 
@@ -95,17 +97,10 @@ namespace LibMetier
                 return this;
             }
 
-            public FourmiBuilder BuildObservable(PersonnageAbstrait observable)
-            {
-                this.fourmi.Observable = observable;
-                return this;
-            }
-
             public Fourmi Build()
             {
                 return new Fourmi(this);
             }
-
         }
     }
 }

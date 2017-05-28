@@ -9,8 +9,7 @@ namespace LibMetier
 {
    public class ComportementCueilleuse : ComportementFourmi
    {
-        private int incrementIdPheromone = 0;
-        List<ObjetAbstrait> objetsTrouvés = new List<ObjetAbstrait>();
+        private FabriquePheromone fabrique = FabriquePheromone.GetInstance();
 
         public ComportementCueilleuse(Fourmi fourmi) : base(fourmi)
         {
@@ -61,9 +60,9 @@ namespace LibMetier
 
         public override void DeposerPheromone(ZoneAbstraite uneZone)
         {
-            Console.WriteLine("Dépôt d'un Phéromone dans la zone... "+uneZone.Nom);
-
-            //uneZone.ListObjets.Add(new Pheromone(incrementIdPheromone++, "Phéromone"));
+            Pheromone pheromone =  fabrique.Creer(this.fourmi.Position);
+            uneZone.LstObjets.Add(pheromone);
+            Console.WriteLine(String.Format("Dépot d'un phéromone dans la zone : {0} à la position : {1}", this.fourmi.Zone.ToString(), this.fourmi.Position.ToString()));
         }
 
         public override bool ContientObjet(ZoneAbstraite uneZone)
