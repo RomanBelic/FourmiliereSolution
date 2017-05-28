@@ -60,9 +60,9 @@ namespace LibMetier
 
         public override void DeposerPheromone(ZoneAbstraite uneZone)
         {
-            Pheromone pheromone =  fabrique.Creer(this.fourmi.Position);
+            Pheromone pheromone = fabrique.Creer(this.fourmi.Position);
             uneZone.LstObjets.Add(pheromone);
-            Console.WriteLine(String.Format("Dépot d'un phéromone dans la zone : {0} à la position : {1}", this.fourmi.Zone.ToString(), this.fourmi.Position.ToString()));
+            fourmi.NotifierObs();
         }
 
         public override bool ContientObjet(ZoneAbstraite uneZone)
