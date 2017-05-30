@@ -35,7 +35,7 @@ namespace LibMetier
                         {
                             if (fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
                             {
-                                if (unObjet.GetType().Name != "Pheromone")
+                                if (unObjet.GetType() == typeof(Pheromone))
                                 {
                                     PrendreObjet(unObjet);
                                     DeposerPheromone(uneZone);

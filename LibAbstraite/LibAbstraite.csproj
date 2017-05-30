@@ -47,8 +47,10 @@
     <Compile Include="GestionObjets\ObjetAbstrait.cs" />
     <Compile Include="GestionObservateur\IObservable.cs" />
     <Compile Include="GestionObservateur\IObserver.cs" />
+    <Compile Include="GestionPersonnages\ChaineAction.cs" />
     <Compile Include="GestionPersonnages\ComportementAbstrait.cs" />
     <Compile Include="GestionPersonnages\PersonnageAbstrait.cs" />
+    <Compile Include="GestionSimulateur\Simulateur.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GestionEnvironnement\ZoneAbstraite.cs" />
@@ -56,8 +58,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="GestionSimulateur\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
