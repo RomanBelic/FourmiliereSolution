@@ -49,6 +49,35 @@ namespace LibMetier
             }
         }
 
+        public override void RechercherEnnemi(ZoneAbstraite uneZone)
+        {
+            if (uneZone.LstObjets.Count > 0)
+            {
+                for (int x = fourmi.Position.X; x <= uneZone.LimitX; x++)
+                {
+                    for (int y = fourmi.Position.Y; y <= uneZone.LimitY; y++)
+                    {
+                        foreach (PersonnageAbstrait unPersonnage in uneZone.LstPersonnages)
+                        {
+                            if (fourmi.Position.X == unPersonnage.Position.X && fourmi.Position.Y == unPersonnage.Y)
+                            {
+                                if (unPersonnage.GetType() != typeof(Fourmi))
+                                {
+                                    fourmi.NotifierObs();       //Notifier les fourmis combattants
+                                    DeposerPheromone(uneZone);
+                                }
+                            }
+                            else
+                            {
+                                fourmi.Destination = new Coordonnee(x, y);
+                                Avancer();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public override void Avancer()
         {
             base.Avancer();

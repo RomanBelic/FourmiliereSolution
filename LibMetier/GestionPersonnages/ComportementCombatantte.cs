@@ -49,6 +49,34 @@ namespace LibMetier
             }
         }
 
+        public override void RechercherEnnemi(ZoneAbstraite uneZone)
+        {
+            if (uneZone.LstObjets.Count > 0)
+            {
+                for (int x = fourmi.Position.X; x <= uneZone.LimitX; x++)
+                {
+                    for (int y = fourmi.Position.Y; y <= uneZone.LimitY; y++)
+                    {
+                        foreach (PersonnageAbstrait unPersonnage in uneZone.LstPersonnages)
+                        {
+                            if (fourmi.Position.X == unPersonnage.Position.X && fourmi.Position.Y == unPersonnage.Position.Y)
+                            {
+                                if (unPersonnage.GetType() != typeof(Fourmi))
+                                {
+                                    Combattre(unPersonnage);
+                                }
+                            }
+                            else
+                            {
+                                fourmi.Destination = new Coordonnee(x, y);
+                                Avancer();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         public override void MangerObjet(ObjetAbstrait unObjet)
         {
             base.MangerObjet(unObjet);
@@ -82,6 +110,21 @@ namespace LibMetier
         public override void SupprimerPersonnage()
         {
             base.SupprimerPersonnage();
+        }
+
+        public override void DeposerPheromone(ZoneAbstraite uneZone)
+        {
+            Console.WriteLine("Opération non autorisée");
+        }
+
+        public override void Nourrir(Fourmi fourmi)
+        {
+            Console.WriteLine("Opération non autorisée");
+        }
+
+        public override void Creuser(ZoneAbstraite uneZone)
+        {
+            Console.WriteLine("Opération non autorisée");
         }
     }
 }

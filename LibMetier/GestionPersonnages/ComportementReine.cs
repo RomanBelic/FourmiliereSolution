@@ -69,6 +69,10 @@ namespace LibMetier
             }
         }
 
+        public override void Creuser(ZoneAbstraite uneZone)
+        {
+        }
+
         public override void Avancer()
         {
             base.Avancer();
@@ -84,12 +88,12 @@ namespace LibMetier
             base.ChoixZoneSuivante(zone);
         }
 
-        public override void Combattre(PersonnageAbstrait ennemi)
+        public override void RechercherEnnemi(ZoneAbstraite uneZone)
         {
             Console.WriteLine("Opération non autorisée");
         }
 
-        public override void Creuser(ZoneAbstraite uneZone)
+        public override void Combattre(PersonnageAbstrait ennemi)
         {
             Console.WriteLine("Opération non autorisée");
         }
