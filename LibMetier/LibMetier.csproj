@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ComportementDiagram.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibAbstraite\LibAbstraite.csproj">

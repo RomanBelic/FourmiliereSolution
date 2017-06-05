@@ -17,10 +17,6 @@ namespace LibMetier
 
         public override void Creuser(ZoneAbstraite uneZone)
         {
-            //if (ContientObjet(uneZone))
-            //{
-            //    PrendreObjet(uneZone);
-            //}
         }
 
         public override void RechercherObjet(ZoneAbstraite uneZone)
@@ -53,6 +49,45 @@ namespace LibMetier
             }
         }
 
+        public override void RechercherEnnemi(ZoneAbstraite uneZone)
+        {
+            if (uneZone.LstObjets.Count > 0)
+            {
+                for (int x = fourmi.Position.X; x <= uneZone.LimitX; x++)
+                {
+                    for (int y = fourmi.Position.Y; y <= uneZone.LimitY; y++)
+                    {
+                        foreach (PersonnageAbstrait unPersonnage in uneZone.LstPersonnages)
+                        {
+                            if (fourmi.Position.X == unPersonnage.Position.X && fourmi.Position.Y == unPersonnage.Y)
+                            {
+                                if (unPersonnage.GetType() != typeof(Fourmi))
+                                {
+                                    fourmi.NotifierObs();       //Notifier les fourmis combattants
+                                    DeposerPheromone(uneZone);
+                                }
+                            }
+                            else
+                            {
+                                fourmi.Destination = new Coordonnee(x, y);
+                                Avancer();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public override void Avancer()
+        {
+            base.Avancer();
+        }
+
+        public override void MangerObjet(ObjetAbstrait unObjet)
+        {
+            base.MangerObjet(unObjet);
+        }
+
         public override void PrendreObjet(ObjetAbstrait unObjet)
         {
             fourmi.LstObjets.Add(unObjet);          
@@ -65,17 +100,30 @@ namespace LibMetier
             fourmi.NotifierObs();
         }
 
-        public override bool ContientObjet(ZoneAbstraite uneZone)
+        public override void Mourir()
         {
-            Console.WriteLine("Rechercher un objet...");
-
-            if (uneZone.LstObjets.Count != 0)
-            {
-                Console.WriteLine("Au moins un objet trouvé dans cette zone... "+uneZone.Nom);
-                return true;
-            }
-            Console.WriteLine("Pas d'objet trouvé dans cette zone... "+uneZone.Nom);
-            return false;
+            base.Mourir();
         }
+
+        public override void AjouterPersonnage(ZoneAbstraite zone)
+        {
+            Console.WriteLine("Opération non autorisée");
+        }
+
+        public override void SupprimerPersonnage()
+        {
+            Console.WriteLine("Opération non autorisée");
+        }
+
+        public override void ChoixZoneSuivante(ZoneAbstraite zone)
+        {
+            base.ChoixZoneSuivante(zone);
+        }
+
+        public override void Combattre(PersonnageAbstrait ennemi)
+        {
+            Console.WriteLine("Opération non autorisée");
+        }
+        
     }
 }

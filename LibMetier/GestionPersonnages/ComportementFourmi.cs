@@ -119,6 +119,11 @@ namespace LibMetier
             throw new NotImplementedException();
         }
 
+        public virtual void RechercherEnnemi(ZoneAbstraite uneZone)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual bool ContientObjet(ZoneAbstraite uneZone)
         {
             throw new NotImplementedException();
@@ -128,6 +133,5 @@ namespace LibMetier
         {
             throw new NotImplementedException();
         }
-
     }
 }
