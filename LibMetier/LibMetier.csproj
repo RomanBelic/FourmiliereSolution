@@ -46,6 +46,9 @@
     <Compile Include="Fabriques\FabriqueFourmi.cs" />
     <Compile Include="Fabriques\FabriquePheromone.cs" />
     <Compile Include="Fabriques\FabriqueZone.cs" />
+    <Compile Include="GestionAction\ChaineActionCombattante.cs" />
+    <Compile Include="GestionAction\ChaineActionCueilleuse.cs" />
+    <Compile Include="GestionAction\ChaineActionFourmi.cs" />
     <Compile Include="GestionAction\ChaineActionReine.cs" />
     <Compile Include="GestionEnvironnement\ZoneFourmilliere.cs" />
     <Compile Include="GestionEtat\CollectionEtat.cs" />
