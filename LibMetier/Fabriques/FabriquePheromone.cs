@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    class FabriquePheromone : FabriqueAbstraite<Pheromone>
+    public class FabriquePheromone : FabriqueAbstraite<Pheromone>
     {
         private static readonly FabriquePheromone instance = new FabriquePheromone();
         private int idGenerator;

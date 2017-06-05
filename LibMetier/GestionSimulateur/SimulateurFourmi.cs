@@ -9,7 +9,7 @@ namespace LibMetier
 {
     public class SimulateurFourmi : Simulateur<Fourmi>
     {
-        private static SimulateurFourmi instance = new SimulateurFourmi();
+        private static readonly SimulateurFourmi instance = new SimulateurFourmi();
 
         private SimulateurFourmi()
         {
