@@ -59,7 +59,7 @@ namespace LibMetier
                     {
                         foreach (PersonnageAbstrait unPersonnage in uneZone.LstPersonnages)
                         {
-                            if (fourmi.Position.X == unPersonnage.Position.X && fourmi.Position.Y == unPersonnage.Y)
+                            if (fourmi.Position.X == unPersonnage.Position.X && fourmi.Position.Y == unPersonnage.Position.Y)
                             {
                                 if (unPersonnage.GetType() != typeof(Fourmi))
                                 {
