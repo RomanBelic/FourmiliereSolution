@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibMetier.SimulateurFourmi">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>GestionSimulateur\SimulateurFourmi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibMetier.FabriqueFourmi">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabriques\FabriqueFourmi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibMetier.FabriqueNourriture">
+    <Position X="6.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabriques\FabriqueNourriture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibMetier.FabriqueOeuf">
+    <Position X="0.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabriques\FabriqueOeuf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibMetier.FabriquePheromone">
+    <Position X="3.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabriques\FabriquePheromone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LibMetier.FabriqueZone">
+    <Position X="6.5" Y="3" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAEAAABABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fabriques\FabriqueZone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
