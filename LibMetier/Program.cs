@@ -13,8 +13,7 @@ namespace LibMetier
         static void Main(string[] args)
         {
             SimulateurFourmi sf = SimulateurFourmi.GetInstance();
-            var zone = sf.FabriqueZone.Creer();
-            //var reine = 
+              
 
             Executable<Reine> r = (Reine reine) => { };
 
