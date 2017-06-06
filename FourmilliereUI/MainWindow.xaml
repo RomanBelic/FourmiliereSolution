@@ -6,7 +6,20 @@
         xmlns:local="clr-namespace:FourmilliereUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Button Name="BtnAdd" Content="Ajouter Fourmi" Grid.Row="2" Grid.Column="0" Click=""></Button>
+        <Button Name="BtnSupp" Content="Supprimer Fourmi" Grid.Row="3" Grid.Column="0" Click=""></Button>
     </Grid>
 </Window>
