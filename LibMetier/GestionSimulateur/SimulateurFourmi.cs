@@ -14,6 +14,9 @@ namespace LibMetier
         private FabriqueZone fabriqueZone = FabriqueZone.GetInstance();
         public FabriqueZone FabriqueZone { get => fabriqueZone; set => fabriqueZone = value; }
 
+        private FabriqueFourmi fabriqueFourmi = FabriqueFourmi.GetInstance();
+        public FabriqueFourmi FabriqueFourmi { get => fabriqueFourmi; set => fabriqueFourmi = value; }
+
         private SimulateurFourmi()
         {
 
