@@ -63,11 +63,11 @@ namespace LibMetier
             }
         }
 
-        public virtual void MangerObjet(ObjetAbstrait unObjet)
+        public virtual void MangerObjet(Nourriture nourriture)
         {
-            if (fourmi.LstObjets.Contains(unObjet))
+            if (fourmi.LstObjets.Contains(nourriture))
             {
-                fourmi.LstObjets.Remove(unObjet);
+                fourmi.LstObjets.Remove(nourriture);
                 fourmi.PointDeVie++;            
             }
         }

@@ -77,9 +77,9 @@ namespace LibMetier
             }
         }
 
-        public override void MangerObjet(ObjetAbstrait unObjet)
+        public override void MangerObjet(Nourriture nourriture)
         {
-            base.MangerObjet(unObjet);
+            base.MangerObjet(nourriture);
         }
 
         public override void PrendreObjet(ObjetAbstrait unObjet)

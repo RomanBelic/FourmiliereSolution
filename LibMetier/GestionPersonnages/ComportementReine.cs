@@ -23,20 +23,17 @@ namespace LibMetier
             return spawn;
         }
 
-        public override void MangerObjet(ObjetAbstrait unObjet)
+        public override void MangerObjet(Nourriture nourriture)
         {
-            base.MangerObjet(unObjet);
+            base.MangerObjet(nourriture);
         }
 
         public override void Nourrir(Fourmi fourmi)
         {
-            foreach(ObjetAbstrait unObjet in fourmi.Zone.LstObjets)
+            foreach(Nourriture nourriture in fourmi.Zone.LstObjets)
             {
-                if(unObjet.GetType() == typeof(Nourriture))
-                {
-                    MangerObjet(unObjet);
-                    break;  // Pour ne pas que la fourmi mange tous les objets "Nourriture" de la zone
-                }
+                MangerObjet(nourriture);
+                break;  // Pour ne pas que la fourmi mange tous les objets "Nourriture" de la zone
             }
         }
 

@@ -11,6 +11,9 @@ namespace LibMetier
     {
         private static readonly SimulateurFourmi instance = new SimulateurFourmi();
 
+        private FabriqueZone fabriqueZone = FabriqueZone.GetInstance();
+        public FabriqueZone FabriqueZone { get => fabriqueZone; set => fabriqueZone = value; }
+
         private SimulateurFourmi()
         {
 
