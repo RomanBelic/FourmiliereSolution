@@ -8,10 +8,10 @@ namespace LibAbstraite
 {
     public delegate void Executable<T> (T parameter);
 
-    public class ChaineAction<T, P>
+    public class ChainAction<T, P>
     {
-        private ChaineAction<T, P> nextAction;
-        public ChaineAction<T, P> NextAction { get => nextAction; set => nextAction = value; }
+        private ChainAction<T, P> nextAction;
+        public ChainAction<T, P> NextAction { get => nextAction; set => nextAction = value; }
 
         private Predicate<P> predicate;
         public Predicate<P> Predicate { get => predicate; set => predicate = value; }
@@ -19,13 +19,13 @@ namespace LibAbstraite
         private Executable<T> executable;
         public Executable<T> Executable { get => executable; set => executable = value; }
 
-        public ChaineAction (Predicate<P> predicate, Executable<T> executable)
+        public ChainAction (Predicate<P> predicate, Executable<T> executable)
         {
             this.predicate = predicate;
             this.executable = executable;
         }
 
-        public ChaineAction<T, P> SetNextChaineAction(ChaineAction<T,P> action)
+        public ChainAction<T, P> SetNextChaineAction(ChainAction<T,P> action)
         {
             this.nextAction = action;
             return nextAction;

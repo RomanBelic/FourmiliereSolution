@@ -23,6 +23,8 @@ namespace LibMetier
             this.Id = Id;
         }
 
+        public ComportementFourmi GetComportementFourmi() { return this.Comportement.Cast<ComportementFourmi>(); }
+
         public override void OnMiseAJour(PersonnageAbstrait observable)
         {
              Console.WriteLine(String.Format("Notification par {0}",observable.ToString()));

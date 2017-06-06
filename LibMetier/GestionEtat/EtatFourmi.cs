@@ -43,7 +43,7 @@ namespace LibMetier
     {
         public EtatMort() : base((int)EtatFlags.Mort, "Morte")
         {
-            Console.WriteLine("Etat Morte");
+
         }
 
         public override void ChangeEtat(PersonnageAbstrait personnage)
@@ -80,7 +80,7 @@ namespace LibMetier
     {
         public EtatOeuf() : base((int)EtatFlags.EtatOeuf, "Oeuf")
         {
-            Console.WriteLine("etat oeuf");
+
         }
 
         public override void ChangeEtat(PersonnageAbstrait personnage)

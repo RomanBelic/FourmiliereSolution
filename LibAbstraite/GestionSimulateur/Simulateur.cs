@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibAbstraite
 {
-    public abstract class Simulateur<T> : IObserver<T>
+    public abstract class Simulateur : IObserver<PersonnageAbstrait>
     {
         private int countTours;
         public int CountTours { get => countTours; set => countTours = value; }
 
-        public abstract void OnMiseAJour(T observable);
+        public abstract void OnMiseAJour(PersonnageAbstrait observable);
     }
 }

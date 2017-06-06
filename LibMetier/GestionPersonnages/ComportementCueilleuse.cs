@@ -104,26 +104,6 @@ namespace LibMetier
         {
             base.Mourir();
         }
-
-        public override void AjouterPersonnage(ZoneAbstraite zone)
-        {
-            Console.WriteLine("Opération non autorisée");
-        }
-
-        public override void SupprimerPersonnage()
-        {
-            Console.WriteLine("Opération non autorisée");
-        }
-
-        public override void ChoixZoneSuivante(ZoneAbstraite zone)
-        {
-            base.ChoixZoneSuivante(zone);
-        }
-
-        public override void Combattre(PersonnageAbstrait ennemi)
-        {
-            Console.WriteLine("Opération non autorisée");
-        }
         
     }
 }

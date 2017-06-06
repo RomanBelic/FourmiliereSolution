@@ -97,21 +97,6 @@ namespace LibMetier
             base.Mourir();
         }
 
-        public override void ChoixZoneSuivante(ZoneAbstraite zone)
-        {
-            base.ChoixZoneSuivante(zone);
-        }
-
-        public override void AjouterPersonnage(ZoneAbstraite zone)
-        {
-            Console.WriteLine("Opération non autorisée");
-        }
-
-        public override void SupprimerPersonnage()
-        {
-            base.SupprimerPersonnage();
-        }
-
         public override void DeposerPheromone(ZoneAbstraite uneZone)
         {
             Console.WriteLine("Opération non autorisée");
