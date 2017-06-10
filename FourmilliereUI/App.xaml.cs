@@ -13,10 +13,10 @@ namespace FourmilliereUI
     /// </summary>
     public partial class App : Application
     {
-        static public FourmiliereViewModel fourmilliereVM { get; set; }
-        public App()
-        {
-            fourmilliereVM = new FourmiliereViewModel();
-        }
+        //static public FourmiliereViewModel fourmilliereVM { get; set; }
+        //public App()
+        //{
+        //    fourmilliereVM = new FourmiliereViewModel();
+        //}
     }
 }

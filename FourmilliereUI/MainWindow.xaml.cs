@@ -35,8 +35,6 @@ namespace FourmilliereUI
             reine.Comportement = new ComportementReine(reine);
             reine.AttacherObs(simulateur);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
-            DataContext = App.fourmilliereVM;
-            Dessiner();
         }
 
         private void plus(object sender, RoutedEventArgs e)
@@ -60,6 +58,10 @@ namespace FourmilliereUI
 
         private void RenderTerrain(Grid gv, int limitX, int limitY)
         {
+            Terrain.ColumnDefinitions.Clear();
+            Terrain.RowDefinitions.Clear();
+            Terrain.Children.Clear();
+
             for (int x = 0; x < limitX; x++)
             {
                 gv.ColumnDefinitions.Add(new ColumnDefinition());
@@ -69,28 +71,5 @@ namespace FourmilliereUI
                 gv.RowDefinitions.Add(new RowDefinition());
             }
         }
-
-        public void InitTerrin()
-        {
-            Terrain.ColumnDefinitions.Clear();
-            Terrain.RowDefinitions.Clear();
-            Terrain.Children.Clear();
-
-            for (int i = 0; i < App.fourmilliereVM.DimensionY; i++)
-            {
-                Terrain.ColumnDefinitions.Add(new ColumnDefinition());
-
-            }
-            for (int i = 0; i < App.fourmilliereVM.DimensionY; i++)
-            {
-                Terrain.RowDefinitions.Add(new RowDefinition());
-            }
-        }
-
-        public void Dessiner()
-        {
-            InitTerrin();
-        }
-
     }
 }
