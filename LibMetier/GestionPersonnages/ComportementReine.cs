@@ -20,6 +20,7 @@ namespace LibMetier
             Coordonnee position = new Coordonnee(fourmi.Position.X, fourmi.Position.Y);
             Fourmi spawn = fabrique.Creer(fourmi.Zone, position);
             spawn.Comportement = new ComportementFourmi(spawn);
+            fourmi.NotifierObs();
             return spawn;
         }
 

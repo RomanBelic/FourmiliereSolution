@@ -44,5 +44,21 @@ namespace LibMetier
                           Build();
             return fourmi;
         }
+
+        public Reine CreerReine(ZoneAbstraite zone, Coordonnee position)
+        {
+            idGenerator++;
+            Coordonnee posNoReference = new Coordonnee(position.X, position.Y);
+            int PV = (ConfigurationManager.AppSettings["PointDeVie"] != null) ? Convert.ToInt32(ConfigurationManager.AppSettings["PointDeVie"]) : 100;
+            Reine fourmi = new Reine.ReineBuilder().
+                         BuildEtat(CollectionEtat.EtatOeuf).
+                         BuildId(idGenerator).
+                         BuildNom("Reine " + idGenerator).
+                         BuildPointVie(PV).
+                         BuildZone(zone).
+                         BuildPosition(posNoReference).
+                         Build();
+            return fourmi;
+        }
     }
 }
