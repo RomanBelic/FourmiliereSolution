@@ -24,5 +24,15 @@ namespace FourmilliereUI
         {
             InitializeComponent();
         }
+
+        private void plus(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("non implémenté");
+        }
+
+        private void moins(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("non implémenté");
+        }
     }
 }
