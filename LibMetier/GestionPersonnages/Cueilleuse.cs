@@ -13,5 +13,7 @@ namespace LibMetier
         {
             this.Comportement = new ComportementCueilleuse(this);
         }
+
+        public ComportementCueilleuse GetComportementCueilleuse() { return this.Comportement.Cast<ComportementCueilleuse>(); }
     }
 }

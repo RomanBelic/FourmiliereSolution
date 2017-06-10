@@ -22,11 +22,13 @@ namespace LibMetier
         public override void AjouterPersonnage(PersonnageAbstrait personnage)
         {
             this.LstPersonnages.Add(personnage);
+            personnage.Zone = this;
         }
 
         public override void SupprimerPersonnage(PersonnageAbstrait personnage)
         {
             this.LstPersonnages.Remove(personnage);
+            personnage.Zone = new ZoneEmpty();
         }
 
         public ZoneFourmilliere(ZoneFourmilliereBuilder builder)

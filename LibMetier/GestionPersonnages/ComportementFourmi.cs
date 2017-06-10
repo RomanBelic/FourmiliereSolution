@@ -18,7 +18,7 @@ namespace LibMetier
 
         public virtual void PrendreObjet(ObjetAbstrait unObjet)
         {
-            if(fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
+            if (fourmi.Position.X == unObjet.PositionObjet.X && fourmi.Position.Y == unObjet.PositionObjet.Y)
             {
                 fourmi.LstObjets.Add(unObjet);
             }
@@ -51,9 +51,9 @@ namespace LibMetier
 
         public virtual void Mourir()
         {
-            foreach(PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
+            foreach (PersonnageAbstrait personnage in fourmi.Zone.LstPersonnages)
             {
-                if(personnage.Id == this.fourmi.Id)
+                if (personnage.Id == this.fourmi.Id)
                 {
                     fourmi.Zone.SupprimerPersonnage(personnage);
                     personnage.Etat.IdFlag = (int)EtatFlags.Mort;
@@ -68,25 +68,8 @@ namespace LibMetier
             if (fourmi.LstObjets.Contains(nourriture))
             {
                 fourmi.LstObjets.Remove(nourriture);
-                fourmi.PointDeVie++;            
+                fourmi.PointDeVie++;
             }
-        }
-
-        public override void SupprimerPersonnage()
-        {
-            fourmi.Zone.LstPersonnages.Remove(fourmi);
-        }
-
-        public override void ChoixZoneSuivante(ZoneAbstraite zone)
-        {
-            fourmi.Zone.SupprimerPersonnage(fourmi);
-            zone.AjouterPersonnage(fourmi);
-            fourmi.Zone = zone;
-        }
-
-        public override void AjouterPersonnage(ZoneAbstraite zone)
-        {
-            zone.LstPersonnages.Add(fourmi);
         }
 
         public virtual void Combattre(PersonnageAbstrait ennemi)
@@ -133,5 +116,6 @@ namespace LibMetier
         {
             throw new NotImplementedException();
         }
+
     }
 }

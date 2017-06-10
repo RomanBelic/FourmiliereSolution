@@ -47,7 +47,7 @@
     <Compile Include="GestionObjets\ObjetAbstrait.cs" />
     <Compile Include="GestionObservateur\IObservable.cs" />
     <Compile Include="GestionObservateur\IObserver.cs" />
-    <Compile Include="GestionPersonnages\ChaineAction.cs" />
+    <Compile Include="GestionPersonnages\ChainAction.cs" />
     <Compile Include="GestionPersonnages\ComportementAbstrait.cs" />
     <Compile Include="GestionPersonnages\PersonnageAbstrait.cs" />
     <Compile Include="GestionSimulateur\Simulateur.cs" />

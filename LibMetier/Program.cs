@@ -12,13 +12,7 @@ namespace LibMetier
     {
         static void Main(string[] args)
         {
-            SimulateurFourmi sf = SimulateurFourmi.GetInstance();
-              
-
-            Executable<Reine> r = (Reine reine) => { };
-
-            ChaineActionReine cha = new ChaineActionReine(x => x.CountTours == 5, r);
-            cha.SetNextChaineAction(cha);
+           
         }
     }
 }

@@ -7,12 +7,16 @@ using System.Threading.Tasks;
 
 namespace LibMetier
 {
-    public class SimulateurFourmi : Simulateur<Fourmi>
+    public class SimulateurFourmi : Simulateur
     {
         private static readonly SimulateurFourmi instance = new SimulateurFourmi();
 
         private FabriqueZone fabriqueZone = FabriqueZone.GetInstance();
         public FabriqueZone FabriqueZone { get => fabriqueZone; set => fabriqueZone = value; }
+
+        private FabriqueFourmi fabriqueFourmi = FabriqueFourmi.GetInstance();
+        public FabriqueFourmi FabriqueFourmi { get => fabriqueFourmi; set => fabriqueFourmi = value; }
+
 
         private SimulateurFourmi()
         {
@@ -24,7 +28,7 @@ namespace LibMetier
             return instance;
         }
 
-        public override void OnMiseAJour(Fourmi observable)
+        public override void OnMiseAJour(PersonnageAbstrait observable)
         {
             Console.WriteLine(String.Format("Notification par : {0}", observable.ToString()));
         }
