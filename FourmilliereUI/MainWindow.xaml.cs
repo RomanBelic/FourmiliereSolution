@@ -46,7 +46,7 @@ namespace FourmilliereUI
             MessageBox.Show("non implémenté");
         }
 
-        private Coordonnee GetMidPostion(ZoneAbstraite zone)
+        private Coordonnee GetMidPosition(ZoneAbstraite zone)
         {
             var posX = zone.LimitX / 2;
             var posY = zone.LimitY / 2;
@@ -57,7 +57,7 @@ namespace FourmilliereUI
         {
             for (int x = 0; x < limitX; x++)
             {
-                gv.ColumnDefinitions.Add(new ColumnDefinition() { });
+                gv.ColumnDefinitions.Add(new ColumnDefinition());
             }
             for (int y = 0; y < limitY; y++)
             {
