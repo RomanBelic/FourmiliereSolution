@@ -33,12 +33,15 @@ namespace FourmilliereUI
             var midPos = GetMidPosition(zone);
             reine = simulateur.FabriqueFourmi.Creer(zone, midPos);
             reine.Comportement = new ComportementReine(reine);
+            reine.AttacherObs(simulateur);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
         }
 
         private void plus(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("non implémenté");
+            var fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
+            fourmi.AttacherObs(simulateur);
+            MessageBox.Show("fourmi créee " + fourmi.ToString());
         }
 
         private void moins(object sender, RoutedEventArgs e)
