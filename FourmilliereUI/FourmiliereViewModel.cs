@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FourmilliereUI
 {
-    class FourmiliereViewModel
+    public class FourmiliereViewModel
     {
         public string titre;
         public int DimensionX { get; set; }

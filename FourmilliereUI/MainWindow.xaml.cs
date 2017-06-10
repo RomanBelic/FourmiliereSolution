@@ -23,6 +23,8 @@ namespace FourmilliereUI
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = App.fourmilliereVM;
+            Dessiner();
         }
 
         private void plus(object sender, RoutedEventArgs e)
@@ -34,5 +36,28 @@ namespace FourmilliereUI
         {
             MessageBox.Show("non implémenté");
         }
+
+        public void InitTerrin()
+        {
+            Terrain.ColumnDefinitions.Clear();
+            Terrain.RowDefinitions.Clear();
+            Terrain.Children.Clear();
+
+            for (int i = 0; i < App.fourmilliereVM.DimensionY; i++)
+            {
+                Terrain.ColumnDefinitions.Add(new ColumnDefinition());
+
+            }
+            for (int i = 0; i < App.fourmilliereVM.DimensionY; i++)
+            {
+                Terrain.RowDefinitions.Add(new RowDefinition());
+            }
+        }
+
+        public void Dessiner()
+        {
+            InitTerrin();
+        }
+
     }
 }
