@@ -33,7 +33,7 @@ namespace FourmilliereUI
             var midPos = GetMidPostion(zone);
             reine = simulateur.FabriqueFourmi.Creer(zone, midPos);
             reine.Comportement = new ComportementReine(reine);
-            RenderTerrain(GvFourmi, zone.LimitX, zone.LimitY);
+            RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
         }
 
         private void plus(object sender, RoutedEventArgs e)
@@ -58,10 +58,10 @@ namespace FourmilliereUI
             for (int x = 0; x < limitX; x++)
             {
                 gv.ColumnDefinitions.Add(new ColumnDefinition() { });
-                for(int y = 0; y < limitY; y++)
-                {
-                    gv.RowDefinitions.Add(new RowDefinition());
-                }
+            }
+            for (int y = 0; y < limitY; y++)
+            {
+                gv.RowDefinitions.Add(new RowDefinition());
             }
         }
     }

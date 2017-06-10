@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FourmilliereUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid ShowGridLines="True" Name="GvFourmi">
+    <Grid ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
