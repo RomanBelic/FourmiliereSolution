@@ -30,7 +30,7 @@ namespace FourmilliereUI
             InitializeComponent();
             simulateur = SimulateurFourmi.GetInstance();
             var zone = simulateur.FabriqueZone.Creer();
-            var midPos = GetMidPostion(zone);
+            var midPos = GetMidPosition(zone);
             reine = simulateur.FabriqueFourmi.Creer(zone, midPos);
             reine.Comportement = new ComportementReine(reine);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
