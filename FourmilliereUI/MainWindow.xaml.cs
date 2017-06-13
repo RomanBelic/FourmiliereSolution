@@ -28,6 +28,7 @@ namespace FourmilliereUI
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = App.fourmilliereVM;
             simulateur = SimulateurFourmi.GetInstance();
             var zone = simulateur.FabriqueZone.Creer();
             var midPos = GetMidPosition(zone);
