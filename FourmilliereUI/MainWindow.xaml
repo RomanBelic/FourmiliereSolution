@@ -18,6 +18,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
+        <!--<ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" SelectedItem="{Binding FourmiSelect}" HorizontalContentAlignment="Stretch">-->
 
         <Button Name="BtnAdd" Content="+ Fourmi" Grid.Row="2" Grid.Column="0" Click="plus"></Button>
         <Button Name="BtnSupp" Content="- Fourmi" Grid.Row="3" Grid.Column="0" Click="moins"></Button>

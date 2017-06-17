@@ -1,9 +1,12 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Version Base", "Solution Version Base", "{B8F3BB06-14A9-49B4-98E4-885D264CA103}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\fourmiRN.jpg = ..\..\..\Desktop\fourmiRN.jpg
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibAbstraite", "LibAbstraite\LibAbstraite.csproj", "{3FEAF800-0FCD-4F7B-ADE8-8627342AB85B}"
 EndProject

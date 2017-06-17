@@ -21,6 +21,7 @@ namespace FourmilliereUI
         public FourmiliereViewModel()
         {
             this.titre = "fourmilière";
+
         }
     }
 }

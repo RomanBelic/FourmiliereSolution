@@ -36,6 +36,7 @@ namespace FourmilliereUI
             reine.Comportement = new ComportementReine(reine);
             reine.AttacherObs(simulateur);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
+            Dessine();
         }
 
         private void plus(object sender, RoutedEventArgs e)
@@ -43,6 +44,7 @@ namespace FourmilliereUI
             var fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
             fourmi.AttacherObs(simulateur);
             MessageBox.Show("fourmi créee " + fourmi.ToString());
+            Dessine();
         }
 
         private void moins(object sender, RoutedEventArgs e)
@@ -71,6 +73,28 @@ namespace FourmilliereUI
             {
                 gv.RowDefinitions.Add(new RowDefinition());
             }
+        }
+
+        public void Dessine()
+        {
+                /*
+                Ellipse e = new Ellipse();
+                e.Fill = new SolidColorBrush(Colors.Blue);
+                e.Margin = new Thickness(3);
+                */
+                Image img = new Image();
+                Uri uri = new Uri("fourmiRN.jpg", UriKind.Relative);
+                img.Source = new BitmapImage(uri);
+
+
+                /*Plateau.Children.Add(e);
+                Grid.SetColumn(e, uneFourmi.X);
+                Grid.SetRow(e, uneFourmi.Y);
+                */
+                Terrain.Children.Add(img);
+                Grid.SetColumn(img, reine.Position.X);
+                Grid.SetRow(img, reine.Position.Y);
+
         }
     }
 }
