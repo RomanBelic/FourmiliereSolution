@@ -36,7 +36,6 @@ namespace FourmilliereUI
             reine.Comportement = new ComportementReine(reine);
             reine.AttacherObs(simulateur);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
-            Dessine();
         }
 
         private void plus(object sender, RoutedEventArgs e)
@@ -54,8 +53,8 @@ namespace FourmilliereUI
 
         private Coordonnee GetMidPosition(ZoneAbstraite zone)
         {
-            var posX = zone.LimitX / 2;
-            var posY = zone.LimitY / 2;
+            var posX = 1;
+            var posY = 1;
             return new Coordonnee(posX, posY);
         }
 

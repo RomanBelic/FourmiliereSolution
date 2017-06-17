@@ -5,13 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using LibAbstraite;
 using LibMetier;
+using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Threading;
 
 namespace FourmilliereUI
 {
     public class FourmiliereViewModel: ViewModelBase
     {
         private SimulateurFourmi simulateur;
-        private Fourmi reine;
+        public ObservableCollection<Fourmi> fourmiList { get; set; }
 
         public string titre;
         public string Titre
