@@ -24,26 +24,25 @@ namespace FourmilliereUI
     {
         private SimulateurFourmi simulateur;
         private Fourmi reine;
+        private Fourmi fourmi;
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = App.fourmilliereVM;
-            simulateur = SimulateurFourmi.GetInstance();
-            var zone = simulateur.FabriqueZone.Creer();
-            var midPos = GetMidPosition(zone);
-            reine = simulateur.FabriqueFourmi.Creer(zone, midPos);
-            reine.Comportement = new ComportementReine(reine);
-            reine.AttacherObs(simulateur);
-            RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
+            Dessine(0, 0, "Content/fourmiliere.jpg");
         }
 
         private void plus(object sender, RoutedEventArgs e)
         {
-            var fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
-            fourmi.AttacherObs(simulateur);
-            MessageBox.Show("fourmi créee " + fourmi.ToString());
-            Dessine();
+            if (reine!=null)
+            {
+                fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
+                fourmi.AttacherObs(simulateur);
+                //App.fourmilliereVM.fourmiList.Add(fourmi);
+                //MessageBox.Show("fourmi créee " + fourmi);
+                Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");
+            }
         }
 
         private void moins(object sender, RoutedEventArgs e)
@@ -74,7 +73,7 @@ namespace FourmilliereUI
             }
         }
 
-        public void Dessine()
+        public void Dessine(int x, int y, string cheminImg)
         {
                 /*
                 Ellipse e = new Ellipse();
@@ -82,7 +81,7 @@ namespace FourmilliereUI
                 e.Margin = new Thickness(3);
                 */
                 Image img = new Image();
-                Uri uri = new Uri("Content/fourmiRN.jpg", UriKind.Relative);
+                Uri uri = new Uri(cheminImg, UriKind.Relative);
                 img.Source = new BitmapImage(uri);
 
 
@@ -91,9 +90,29 @@ namespace FourmilliereUI
                 Grid.SetRow(e, uneFourmi.Y);
                 */
                 Terrain.Children.Add(img);
-                Grid.SetColumn(img, reine.Position.X);
-                Grid.SetRow(img, reine.Position.Y);
+                Grid.SetColumn(img, x);
+                Grid.SetRow(img, y);
 
+        }
+
+        private void Start(object sender, RoutedEventArgs e)
+        {
+            simulateur = SimulateurFourmi.GetInstance();
+            var zone = simulateur.FabriqueZone.Creer();
+            var midPos = GetMidPosition(zone);
+            reine = simulateur.FabriqueFourmi.Creer(zone, midPos);
+            reine.Comportement = new ComportementReine(reine);
+            reine.AttacherObs(simulateur);
+            RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
+            Dessine(zone.LimitX/zone.LimitX, zone.LimitY/ zone.LimitY, "Content/fourmiRN.jpg");
+        }
+
+        private void tour(object sender, RoutedEventArgs e)
+        {
+            if (fourmi != null)
+            {
+                Dessine(fourmi.Position.X++, fourmi.Position.Y++, "Content/fourmiRN.jpg");
+            }
         }
     }
 }

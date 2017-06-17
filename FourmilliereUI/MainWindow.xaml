@@ -22,6 +22,8 @@
 
         <Button Name="BtnAdd" Content="+ Fourmi" Grid.Row="2" Grid.Column="0" Click="plus"></Button>
         <Button Name="BtnSupp" Content="- Fourmi" Grid.Row="3" Grid.Column="0" Click="moins"></Button>
+        <Button Name="BtnTour" Content="Tour ->" Grid.Row="2" Grid.Column="1" Click="tour"></Button>
+        <Button Name="BtnStart" Content="Commencer" Grid.Row="3" Grid.Column="1" Click="Start"></Button>
 
         <Button Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
             <Button.Content>
