@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Collections.ObjectModel;
+
 
 namespace FourmilliereUI
 {
@@ -25,6 +27,7 @@ namespace FourmilliereUI
         private SimulateurFourmi simulateur;
         private Fourmi reine;
         private Fourmi fourmi;
+        public List<Fourmi> fourmiList { get; set; }
 
         public MainWindow()
         {
@@ -39,6 +42,7 @@ namespace FourmilliereUI
             {
                 fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
                 fourmi.AttacherObs(simulateur);
+                //fourmiList.Add(fourmi);
                 //App.fourmilliereVM.fourmiList.Add(fourmi);
                 //MessageBox.Show("fourmi créee " + fourmi);
                 Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");

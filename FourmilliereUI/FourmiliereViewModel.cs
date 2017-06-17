@@ -13,8 +13,6 @@ namespace FourmilliereUI
 {
     public class FourmiliereViewModel: ViewModelBase
     {
-        public ObservableCollection<Fourmi> fourmiList { get; set; }
-
         public string titre;
         public string Titre
         {

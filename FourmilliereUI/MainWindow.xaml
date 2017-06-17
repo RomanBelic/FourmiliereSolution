@@ -20,6 +20,24 @@
         </Grid.RowDefinitions>
         <!--<ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" SelectedItem="{Binding FourmiSelect}" HorizontalContentAlignment="Stretch">-->
 
+        <ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Stretch">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Width="30" Source="Content/fourmiRN.jpg"/>
+                        <TextBlock Grid.Column="1" Text="{Binding nom}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding etapeList.Count}"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
         <Button Name="BtnAdd" Content="+ Fourmi" Grid.Row="2" Grid.Column="0" Click="plus"></Button>
         <Button Name="BtnSupp" Content="- Fourmi" Grid.Row="3" Grid.Column="0" Click="moins"></Button>
         <Button Name="BtnTour" Content="Tour ->" Grid.Row="2" Grid.Column="1" Click="tour"></Button>
