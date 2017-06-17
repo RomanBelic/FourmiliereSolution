@@ -23,6 +23,12 @@
         <Button Name="BtnAdd" Content="+ Fourmi" Grid.Row="2" Grid.Column="0" Click="plus"></Button>
         <Button Name="BtnSupp" Content="- Fourmi" Grid.Row="3" Grid.Column="0" Click="moins"></Button>
 
+        <Button Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
+            <Button.Content>
+                <Image  Source="Content/fourmiRN.jpg"></Image>
+            </Button.Content>
+        </Button>
+
         <Grid Name="Terrain" Grid.Row="1" Grid.Column="1" ShowGridLines="True"/>
     </Grid>
 </Window>

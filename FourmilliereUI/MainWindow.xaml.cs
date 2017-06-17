@@ -83,7 +83,7 @@ namespace FourmilliereUI
                 e.Margin = new Thickness(3);
                 */
                 Image img = new Image();
-                Uri uri = new Uri("fourmiRN.jpg", UriKind.Relative);
+                Uri uri = new Uri("Content/fourmiRN.jpg", UriKind.Relative);
                 img.Source = new BitmapImage(uri);
 
 
