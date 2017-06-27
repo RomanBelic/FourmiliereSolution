@@ -27,7 +27,7 @@ namespace FourmilliereUI
         private SimulateurFourmi simulateur;
         private Fourmi reine;
         private Fourmi fourmi;
-        public List<Fourmi> fourmiList { get; set; }
+        private List<PersonnageAbstrait> fourmiList;
 
         public MainWindow()
         {
@@ -42,6 +42,8 @@ namespace FourmilliereUI
             {
                 fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
                 fourmi.AttacherObs(simulateur);
+                fourmiList = reine.Zone.LstPersonnages;
+                fourmiList.Add(fourmi);
                 //fourmiList.Add(fourmi);
                 //App.fourmilliereVM.fourmiList.Add(fourmi);
                 //MessageBox.Show("fourmi créee " + fourmi);
