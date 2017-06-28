@@ -45,10 +45,12 @@ namespace FourmilliereUI
             {
                 fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
                 fourmi.AttacherObs(simulateur);
+                fourmi.Position.X = 20 / 2;
+                fourmi.Position.Y = 20 / 2 + 1;
                 fourmiList.Add(fourmi);
                 //if (fourmi.Etat == Oeuf)
                 //{
-                    Dessine(fourmi.Position.X + 1, fourmi.Position.Y + 1, "Content/oeuf.jpg");
+                    Dessine(fourmi.Position.X, fourmi.Position.Y , "Content/oeuf.jpg");
                 //}
                 //Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");
             }
@@ -127,11 +129,19 @@ namespace FourmilliereUI
                 uneFourmi.tourFourmi++;
                 if (uneFourmi.tourFourmi < 5)
                 {
-                    Dessine(fourmi.Position.X + 1, fourmi.Position.Y + 1, "Content/oeuf.jpg");
-                    Dessine(20 / 2, 20 / 2, "Content/fourmiRNRN.jpg");
+                    Dessine(fourmi.Position.X, fourmi.Position.Y, "Content/oeuf.jpg");
+                    Dessine(fourmi.Position.X, fourmi.Position.Y - 1, "Content/fourmiRNRN.jpg");
                 }
                 else
                 {
+                    if ((uneFourmi.Position.X == 1 && uneFourmi.Position.Y == 1) || uneFourmi.trouver == true)
+                    {
+                        uneFourmi.trouver = true;
+                        uneFourmi.Position.X++;
+                        uneFourmi.Position.Y++;
+                        Dessine(20 / 2, 20 / 2, "Content/fourmiRNRN.jpg");
+                        Dessine(uneFourmi.Position.X, uneFourmi.Position.Y, "Content/fourmiRN.jpg");
+                    }
                     int newX = uneFourmi.Position.X + hazard.Next(3) - 1;
                     int newY = uneFourmi.Position.Y + hazard.Next(3) - 1;
 
@@ -149,11 +159,7 @@ namespace FourmilliereUI
 
         private void go(object sender, RoutedEventArgs e)
         {
-            while (true)
-            {
-                Avancer1Tour(20, 20);
-                
-            }
+
         }
 
         private void AjoutNourriture(object sender, RoutedEventArgs e)

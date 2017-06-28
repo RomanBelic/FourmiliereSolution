@@ -11,6 +11,7 @@ namespace LibMetier
     {
         protected override object KeyComparer => this.Id;
         public int tourFourmi;
+        public Boolean trouver = false;
         protected int TourFourmi { get => tourFourmi; set => tourFourmi = value; }
 
         public Fourmi() : base()
