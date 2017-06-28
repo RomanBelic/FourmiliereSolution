@@ -10,6 +10,7 @@ namespace LibMetier
     public class Fourmi : PersonnageAbstrait
     {
         protected override object KeyComparer => this.Id;
+        private int TourFourmi;
 
         public Fourmi() : base()
         {
@@ -40,6 +41,7 @@ namespace LibMetier
             this.Zone = builder.Fourmi.Zone;
             this.LstObservers = builder.Fourmi.LstObservers;
             this.Position = builder.Fourmi.Position;
+            this.TourFourmi = 1;
         }
 
         public class FourmiBuilder

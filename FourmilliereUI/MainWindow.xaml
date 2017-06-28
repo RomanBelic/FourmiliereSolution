@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
         <!--<ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" SelectedItem="{Binding FourmiSelect}" HorizontalContentAlignment="Stretch">-->
 
-        <ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Stretch">
+        <ListBox Name="LBFourmiList"  ItemsSource="{Binding fourmiList}" Grid.Column="0" Grid.Row="1" SelectedItem="{Binding FourmiSelect}" HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -30,8 +30,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Column="0" Width="30" Source="Content/fourmiRN.jpg"/>
-                        <TextBlock Grid.Column="1" Text="{Binding nom}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding etapeList.Count}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding fourmi.Nom}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding fourmi.TourFourmi}"/>
 
                     </Grid>
                 </DataTemplate>

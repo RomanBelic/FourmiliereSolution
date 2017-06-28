@@ -81,7 +81,7 @@ namespace LibMetier
                 return this;
             }
 
-            public ZoneFourmilliereBuilder buildLstPersonnages(List<PersonnageAbstrait> lstPersonnages)
+            public ZoneFourmilliereBuilder buildLstPersonnages(List<PersonnageAbstrait> lstPersonnages)//
             {
                 this.zone.LstPersonnages = lstPersonnages;
                 return this;

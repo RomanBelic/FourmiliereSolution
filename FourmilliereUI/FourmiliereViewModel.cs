@@ -13,6 +13,11 @@ namespace FourmilliereUI
 {
     public class FourmiliereViewModel: ViewModelBase
     {
+        private SimulateurFourmi simulateur;
+        private Fourmi reine;
+        private Fourmi fourmi;
+        public ObservableCollection<Fourmi> fourmiList = new ObservableCollection<Fourmi>();
+
         public string titre;
         public string Titre
         {
