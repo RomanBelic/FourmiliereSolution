@@ -27,7 +27,10 @@ namespace FourmilliereUI
         private SimulateurFourmi simulateur;
         private Fourmi reine;
         private Fourmi fourmi;
-        public List<Fourmi> fourmiList { get; set; }
+        static Random hazard = new Random();
+        public List<Fourmi> fourmiList = new List<Fourmi>();
+        public List<Nourriture> listNourriture = new List<Nourriture>();
+        public Nourriture nourriture;
 
         public MainWindow()
         {
@@ -41,12 +44,13 @@ namespace FourmilliereUI
             if (reine!=null)
             {
                 fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
-                //fourmiList.Add(fourmi);
                 fourmi.AttacherObs(simulateur);
-                //fourmiList.Add(fourmi);
-                //App.fourmilliereVM.fourmiList.Add(fourmi);
-                //MessageBox.Show("fourmi créee " + fourmi);
-                Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");
+                fourmiList.Add(fourmi);
+                //if (fourmi.Etat == Oeuf)
+                //{
+                    Dessine(fourmi.Position.X + 1, fourmi.Position.Y + 1, "Content/oeuf.jpg");
+                //}
+                //Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");
             }
         }
 
@@ -80,24 +84,13 @@ namespace FourmilliereUI
 
         public void Dessine(int x, int y, string cheminImg)
         {
-                /*
-                Ellipse e = new Ellipse();
-                e.Fill = new SolidColorBrush(Colors.Blue);
-                e.Margin = new Thickness(3);
-                */
                 Image img = new Image();
                 Uri uri = new Uri(cheminImg, UriKind.Relative);
                 img.Source = new BitmapImage(uri);
 
-
-                /*Plateau.Children.Add(e);
-                Grid.SetColumn(e, uneFourmi.X);
-                Grid.SetRow(e, uneFourmi.Y);
-                */
                 Terrain.Children.Add(img);
                 Grid.SetColumn(img, x);
                 Grid.SetRow(img, y);
-
         }
 
         private void Start(object sender, RoutedEventArgs e)
@@ -109,18 +102,65 @@ namespace FourmilliereUI
             reine.Comportement = new ComportementReine(reine);
             reine.AttacherObs(simulateur);
             RenderTerrain(Terrain, zone.LimitX, zone.LimitY);
-            Dessine(zone.LimitX/zone.LimitX, zone.LimitY/ zone.LimitY, "Content/fourmiRN.jpg");
+        
+            Dessine(zone.LimitX / 2, zone.LimitY / 2, "Content/fourmiRNRN.jpg");
+        
         }
 
         private void tour(object sender, RoutedEventArgs e)
         {
             if (fourmi != null)
             {
-                Terrain.Children.Clear();
-                Dessine(1, 1, "Content/fourmiRN.jpg");
-                Dessine(2, 2, "Content/fourmiRN.jpg");
-                Dessine(fourmi.Position.X++, fourmi.Position.Y++, "Content/fourmiRN.jpg");
+                    Avancer1Tour(20, 20);
             }
+        }
+        public void Avancer1Tour(int dimX, int dimY)
+        {
+            AvanceAuHazrard(dimX, dimY);
+
+        }
+        private void AvanceAuHazrard(int dimX, int dimY)
+        {
+            RenderTerrain(Terrain, 20, 20);
+            foreach (var uneFourmi in fourmiList)
+            {
+                uneFourmi.tourFourmi++;
+                if (uneFourmi.tourFourmi < 5)
+                {
+                    Dessine(fourmi.Position.X + 1, fourmi.Position.Y + 1, "Content/oeuf.jpg");
+                    Dessine(20 / 2, 20 / 2, "Content/fourmiRNRN.jpg");
+                }
+                else
+                {
+                    int newX = uneFourmi.Position.X + hazard.Next(3) - 1;
+                    int newY = uneFourmi.Position.Y + hazard.Next(3) - 1;
+
+                    if ((newX >= 0) && (newX < dimX)) uneFourmi.Position.X = newX;
+                    if ((newY >= 0) && (newY < dimY)) uneFourmi.Position.Y = newY;
+                    Dessine(20 / 2, 20 / 2, "Content/fourmiRNRN.jpg");
+                    Dessine(uneFourmi.Position.X, uneFourmi.Position.Y, "Content/fourmiRN.jpg");
+                }
+            }
+            foreach (var item in listNourriture)
+            {
+                Dessine(nourriture.nourrX, nourriture.nourrY, "Content/nourriture.jpg");
+            }
+        }
+
+        private void go(object sender, RoutedEventArgs e)
+        {
+            while (true)
+            {
+                Avancer1Tour(20, 20);
+                
+            }
+        }
+
+        private void AjoutNourriture(object sender, RoutedEventArgs e)
+        {
+            nourriture = new Nourriture(1, 1);
+            listNourriture.Add(nourriture);
+            Dessine(nourriture.nourrX, nourriture.nourrY, "Content/nourriture.jpg");
         }
     }
 }

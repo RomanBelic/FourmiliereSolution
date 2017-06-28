@@ -10,7 +10,7 @@ namespace LibMetier
     public class Fourmi : PersonnageAbstrait
     {
         protected override object KeyComparer => this.Id;
-        private int tourFourmi;
+        public int tourFourmi;
         protected int TourFourmi { get => tourFourmi; set => tourFourmi = value; }
 
         public Fourmi() : base()

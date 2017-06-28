@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FourmilliereUI"
         mc:Ignorable="d"
         Title="{Binding titre}" Height="350" Width="525">
-    <Grid ShowGridLines="True">
+    <Grid  ShowGridLines="True">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="3*"/>
@@ -15,6 +15,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
@@ -40,9 +41,12 @@
 
         <Button Name="BtnAdd" Content="+ Fourmi" Grid.Row="2" Grid.Column="0" Click="plus"></Button>
         <Button Name="BtnSupp" Content="- Fourmi" Grid.Row="3" Grid.Column="0" Click="moins"></Button>
+        <Button Name="BtnAddnr" Content="+ nourriture" Grid.Row="4" Grid.Column="0" Click="AjoutNourriture"></Button>
         <Button Name="BtnTour" Content="Tour ->" Grid.Row="2" Grid.Column="1" Click="tour"></Button>
         <Button Name="BtnStart" Content="Commencer" Grid.Row="3" Grid.Column="1" Click="Start"></Button>
-
+        <Button Name="Go" Content="Go ->" Grid.Row="4" Grid.Column="1" Click="go"></Button>
+        <!--<Button Name="Stop" Content="STOP ->" Grid.Row="4" Grid.Column="2" Click="stop"></Button>-->
+        
         <Button Grid.Row="2" Grid.Column="2" Grid.RowSpan="2">
             <Button.Content>
                 <Image  Source="Content/fourmiRN.jpg"></Image>
