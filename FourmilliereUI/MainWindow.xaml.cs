@@ -27,9 +27,8 @@ namespace FourmilliereUI
         private SimulateurFourmi simulateur;
         private Fourmi reine;
         private Fourmi fourmi;
-        //public ObservableCollection<Fourmi> fourmiList = new ObservableCollection<Fourmi>();
-        //public List<Fourmi> fourmiList = new List<Fourmi>();
-        private List<PersonnageAbstrait> fourmiList;
+        public List<Fourmi> fourmiList { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -44,8 +43,9 @@ namespace FourmilliereUI
                 fourmi = reine.Comportement.Cast<ComportementReine>().CreerFourmi();
                 //fourmiList.Add(fourmi);
                 fourmi.AttacherObs(simulateur);
-                fourmiList = reine.Zone.LstPersonnages;
-                fourmiList.Add(fourmi);
+                //fourmiList.Add(fourmi);
+                //App.fourmilliereVM.fourmiList.Add(fourmi);
+                //MessageBox.Show("fourmi créee " + fourmi);
                 Dessine(fourmi.Position.X+1, fourmi.Position.Y+1, "Content/fourmiRN.jpg");
             }
         }
